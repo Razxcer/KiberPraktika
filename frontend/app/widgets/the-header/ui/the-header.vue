@@ -73,12 +73,8 @@ onUnmounted(() => {
         </ul>
       </nav>
 
-      <!-- Соцсети (Иконки справа) -->
-      <div class="the-header__socials">
-        <TgButton/>
-        <MaxButton/>
-        <VkButton/>
-      </div>
+      <!-- Соцсети -->
+      <MessIcons/>
 
     </div>
   </header>
@@ -103,18 +99,12 @@ onUnmounted(() => {
   transition: background-color 0.4s ease, padding 0.4s ease, color 0.4s ease;
 
   &__container {
-    max-width: 1440px;
+    max-width: 3050px;
     margin: 0 auto;
     padding: 0 var(--base-padding-x);
     display: flex;
     align-items: center;
     justify-content: space-between;
-  }
-
-  &__logo-text {
-    font-weight: 800;
-    font-size: 24px;
-    letter-spacing: 1px;
   }
 
   &__menu {
@@ -132,7 +122,7 @@ onUnmounted(() => {
   &__link { // Сслыки - градиент, в 2.5 раза шире фон и двигается
     color: inherit;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
 
     background-image: linear-gradient(to right, 
     var(--current-color) 40%, 
@@ -150,24 +140,6 @@ onUnmounted(() => {
     &:hover {
       background-position: right center;
     }
-  }
-
-  &__socials {
-    display: flex;
-    gap: 10px;
-  }
-
-  &__social-icon {
-    width: 32px;
-    height: 32px;
-    border: 1px solid currentColor;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    text-decoration: none;
-    color: inherit;
   }
 
   // ==========================================

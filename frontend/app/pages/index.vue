@@ -5,7 +5,7 @@
     
     <!-- Сюда Nuxt будет автоматически вставлять содержимое ваших страниц из папки pages/ -->
     <div class="layout-default__content">
-      <slot />
+      <TheHero />
     </div>
   </div>
 </template>
@@ -15,7 +15,7 @@
   &__content {
     // Делаем отступ сверху, чтобы контент страниц не залезал под фиксированную шапку
     padding-top: 90px;
-    height: 2000px; 
+    height: 2000px;
   }
 }
 </style>

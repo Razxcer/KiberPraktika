@@ -61,7 +61,7 @@
   </a>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped> 
 // 1. Анимация для всего контейнера с кляксами
 @keyframes orbit-move {
   0% { transform: translate(-60%, -60%) rotate(0deg); }
