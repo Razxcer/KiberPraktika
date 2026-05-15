@@ -1,0 +1,88 @@
+<script setup lang="ts">
+import type { ProjectItem } from '../model/types';
+
+// Принимаем данные проекта через props
+defineProps<{
+  project: ProjectItem;
+}>();
+</script>
+
+<template>
+  <!-- Если проект "большой" по ТЗ, добавляем модификатор БЭМ --big -->
+  <article :class="['project-card', { 'project-card--big': project.is_big }]">
+    <div class="project-card__image-wrapper">
+      <img 
+        :src="project.image.original_url" 
+        :alt="project.title" 
+        class="project-card__image"
+      />
+      <!-- Синяя круглая стрелочка из дизайна -->
+      <div class="project-card__arrow">↗</div>
+    </div>
+    <h3 class="project-card__title">{{ project.title }}</h3>
+    <p class="project-card__description">{{ project.description }}</p>
+  </article>
+</template>
+
+<style lang="scss">
+.project-card {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+
+  &__image-wrapper {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    margin-bottom: 20px;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover &__image {
+    transform: scale(1.03); // Эффект при наведении
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #0047ff; // Синий цвет из скрина
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    color: #111;
+  }
+
+  &__description {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  // Модификатор БЭМ для больших карточек (если сетка будет строиться на гридах)
+  &--big {
+    @include desktop {
+      grid-column: span 2; 
+    }
+  }
+}
+</style>
