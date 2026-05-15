@@ -13,3 +13,7 @@ $breakpoint-desktop: 1024px;
 @mixin desktop {
   @media (min-width: #{$breakpoint-desktop}) { @content; }
 }
+
+// Шрифты из ТЗ
+$font-title: 'Unbounded', sans-serif;
+$font-text: 'Wix Madefor Text', sans-serif;
