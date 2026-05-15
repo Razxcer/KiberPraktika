@@ -6,3 +6,51 @@ body {
   font-family: sans-serif;
   box-sizing: border-box;
 }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:root {
+  --dark: #0b0d20;
+  --dark-2: #161414;
+  --selection: #2d41f940;
+  --blue: #2d41f9;
+  --blue-light: #6ca7ff;
+  --blue-dark: #0014d0;
+  --blue-dark-2: #262a4f;
+  --blue-dodger: #1c84ff;
+  --blue-dodger-light: #36cfff;
+  --blue-button: #3046fa;
+  --purple-dark: #6720ff;
+  --purple-dark-2: #6c26ff;
+  --purple: #8147ff;
+  --purple-light: #9e70ff;
+  --purple-light-2: #aa76ff;
+  --turquoise: #49ffe9;
+  --malibu: #85c4ff;
+  --cerulean: #05b7ef;
+  --gray-dark: #5c5e6e;
+  --gray-dark-2: #272323;
+  --gray: #cad0e2;
+  --gray-alto: #d9d9d9;
+  --gray-light: #edeeff;
+  --gray-light-2: #e6e6e6;
+  --white: #fff;
+  --gradient-color-1: #c3e4ff;
+  --gradient-color-2: #6ec3f4;
+  --gradient-color-3: #eae2ff;
+  --gradient-color-4: #b9beff;
+  --gradient-cyan-bright: #00dffb;
+  --gradient-pink-bright: #ffb1ff;
+  --red: #ff3e61;
+
+  --base-padding-x: 50px;
+  
+  --swiper-pagination-bullet-width: 6px;
+  --swiper-pagination-bullet-height: 6px;
+  --swiper-pagination-bullet-inactive-opacity: 1;
+  --swiper-pagination-bullet-inactive-color: var(--gray-light);
+  --swiper-pagination-bullet-color: var(--blue-button)
+}
