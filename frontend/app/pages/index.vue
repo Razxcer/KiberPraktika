@@ -6,6 +6,7 @@
     <!-- Сюда Nuxt будет автоматически вставлять содержимое ваших страниц из папки pages/ -->
     <div class="layout-default__content">
       <TheHero />
+      <BrandsTicker />
     </div>
   </div>
 </template>

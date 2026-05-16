@@ -15,31 +15,34 @@
           e-ком, веб-cервисы, ИИ
         </h2>
 
-        <!-- Блок управления (Кнопка + Соцсети) -->
+        <!-- Нижняя панель -->
         <div class="the-hero__actions">
-          <!-- <button class="the-hero__btn-discuss text-h9">Обсудить проект</button> -->
-          <FeedBackButton/>
+
+          <!-- Блок управления (Кнопка + Соцсети) -->
           <div class="the-hero__socials">
+            <FeedBackButton/>
             <MessIconsFilled/>
           </div>
+
+          <!-- Вывеска "30 место" -->
+          <div class="the-hero__badge">
+            <div class="the-hero__badge-number-box">
+              <span class="the-hero__badge-digit">30</span>
+              <span class="the-hero__badge-text-low text-h10">место</span>
+            </div>
+            <p class="the-hero__badge-desc text-h10">
+              Разработка сайтов и<br/>веб-сервисов в среднем<br/>ценовом сегменте
+            </p>
+          </div>
+          
         </div>
 
-        <!-- Вывеска "30 место" -->
-        <div class="the-hero__badge">
-          <div class="the-hero__badge-number-box">
-            <span class="the-hero__badge-digit">30</span>
-            <span class="the-hero__badge-text-low text-h10">место</span>
-          </div>
-          <p class="the-hero__badge-desc text-h10">
-            Разработка сайтов и веб-сервисов в среднем ценовом сегменте
-          </p>
-        </div>
+        
 
       </div>
 
-      <!-- ПРАВАЯ ЧАСТЬ: Фотография девушек -->
+      <!-- ПРАВАЯ ЧАСТЬ: Фотография команды -->
       <div class="the-hero__image-box">
-        <!-- Когда найдете фото, просто замените путь в src -->
         <img 
           src="~assets/img/banner-pic-2.avif" 
           alt="Команда разработки" 
@@ -50,24 +53,22 @@
   </section>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .the-hero {
   position: relative;
-  // Цвет фона берем из палитры (темно-синий/фиолетовый)
   background-color: var(--blue-button); 
-  border-radius: 40px; // Большое скругление краев баннера
+  border-radius: 40px;
   margin: 20px var(--base-padding-x);
   overflow: hidden;
   color: var(--white);
 
-  // Снежинка на заднем плане
   &__bg-snowflake {
     position: absolute;
     right: -10%;
     top: -20%;
     width: 60%;
     height: 140%;
-    color: var(--blue); // Чуть темнее основного фона баннера
+    color: var(--blue);
     opacity: 0.6;
     pointer-events: none;
     z-index: 1;
@@ -115,20 +116,16 @@
     @include mobile { font-size: 28px; }
     @include tablet { font-size: 40px; }
     @include desktop { font-size: 54px; }
-
-    // Стилизация цветных знаков внутри текста, как на баннере
-    &-star { color: var(--purple-light-2); }
-    &-amp { color: var(--turquoise); }
-    &-dollar { color: var(--purple-light-2); }
-    &-equal { color: var(--gray); }
   }
 
   // Блок кнопок
   &__actions {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 20px;
+    gap: 50px;
     margin-bottom: 50px;
+    max-width: 600px;
 
     @include mobile {
       flex-direction: column;
@@ -136,39 +133,25 @@
     }
   }
 
-  // Кнопка "Обсудить проект"
-  &__btn-discuss {
-    background-color: var(--dark);
-    color: var(--white);
-    border: none;
-    padding: 16px 36px;
-    border-radius: 30px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: transform 0.2s ease, background-color 0.2s ease;
-
-    &:hover {
-      background-color: var(--dark-2);
-      transform: translateY(-2px);
-    }
-  }
-
   &__socials {
     display: flex;
-    gap: 12px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
   }
+
 
   // Вывеска "30 место"
   &__badge {
     display: flex;
     align-items: center;
     gap: 16px;
-    background-color: rgba(11, 13, 32, 0.6); // Прозрачный темный фон
-    backdrop-filter: blur(10px); // Эффект матового стекла
+    background-color: rgba(11, 13, 32, 0.9);
     border-radius: 30px;
     padding: 12px 24px;
     align-self: flex-start;
     max-width: 380px;
+    rotate: -3deg;
 
     &-number-box {
       display: flex;
@@ -194,14 +177,15 @@
 
     &-desc {
       margin: 0;
-      color: var(--gray);
+      color: var(--white);
+      font-weight: 600;
       line-height: 1.4;
     }
   }
 
-  // Правый блок с фото девушек
+  // Правый блок с фото команды
   &__image-box {
-    flex: 0.8;
+    flex: 0.5;
     position: relative;
     display: flex;
     align-items: flex-end;
@@ -217,7 +201,6 @@
     max-width: 100%;
     height: auto;
     object-fit: contain;
-    // Делаем так, чтобы снизу фото ровно прижималось к краю баннера
     display: block; 
     z-index: 2;
   }
