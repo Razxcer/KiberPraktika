@@ -62,6 +62,14 @@
   overflow: hidden;
   color: var(--white);
 
+  @include tablet{
+    margin: 20px calc(var(--base-padding-x) / 2);
+  }
+
+  @include mobile{
+    margin: 20px calc(var(--base-padding-x) / 4);
+  }
+
   &__bg-snowflake {
     position: absolute;
     right: -10%;
@@ -93,7 +101,7 @@
       padding: 40px 20px;
     }
     @include tablet {
-      padding: 50px 30px;
+      padding: 20px 10px 0 10px;
     }
   }
 
@@ -194,6 +202,10 @@
     @include mobile {
       margin-top: 40px;
       justify-content: center;
+    }
+
+    @include tablet {
+      flex: 0.6;
     }
   }
 
