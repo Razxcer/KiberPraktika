@@ -1,7 +1,27 @@
+<script setup>
+
+defineProps({
+  title: {
+    type: String,
+    default: 'Отправьте Propsы!'
+  },
+  href: {
+    type: String,
+    default: "#"
+  },
+  isActive: {
+    type: Boolean,
+    default: false
+  }
+})
+
+</script>
+
+
 <template>
   <!-- Вся кнопка с анимациями -->
-  <a href="#" rel="nofollow" aria-label="Перейти в Telegram">
-    <button class="ui-icon-button">
+  <a :href="href" rel="nofollow">
+    <button :class="['ui-icon-button', { 'ui-icon-button--active': isActive }]">
       <!-- Контейнер для летающих клякс -->
       <span class="ui-icon-button__over" aria-hidden="true">
         
@@ -43,7 +63,8 @@
       
       <!-- Контент самой кнопки (иконка) -->
         <span class="ui-icon-button__content text-h9">
-        Обсудить проект
+          {{title}}
+          <span v-if="isActive" class="ui-icon-button__close">✕</span>
         </span>
     </button>
   </a>
@@ -70,7 +91,7 @@
   width: 220px;  // Размеры круглой кнопки из дизайна
   height: 40px;
   border-radius: 1.5em;
-  background: var(--dark);
+  background: rgb(245, 245, 247);
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -99,6 +120,12 @@
     opacity: 1;
   }
 
+  &--active {
+    background-color: var(--blue-button);
+    color: var(--white);
+    border-color: var(--blue-button);
+  }
+
   &:hover{
     color: var(--white);
     border: none;
@@ -109,6 +136,11 @@
     width: 60%;
     height: 60%;
     position: relative;
+  }
+  
+  &__close {
+    font-size: 10px;
+    opacity: 0.8;
   }
 
   &__orb-blue, &__orb-cyan, &__orb-pink {

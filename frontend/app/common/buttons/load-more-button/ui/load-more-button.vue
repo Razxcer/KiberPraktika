@@ -1,7 +1,7 @@
 <template>
   <!-- Вся кнопка с анимациями -->
   <a href="#" rel="nofollow" aria-label="Перейти в Telegram">
-    <button class="ui-icon-button">
+    <button class="ui-icon-button" type="button">
       <!-- Контейнер для летающих клякс -->
       <span class="ui-icon-button__over" aria-hidden="true">
         
@@ -43,7 +43,7 @@
       
       <!-- Контент самой кнопки (иконка) -->
         <span class="ui-icon-button__content text-h9">
-        Обсудить проект
+        Загрузить ещё
         </span>
     </button>
   </a>
@@ -77,7 +77,7 @@
   justify-content: center;
   border: none;
   text-decoration: none;
-  color: inherit;
+  color: var(--white);
   isolation: isolate; 
   overflow: hidden; // Регулировка границ
 

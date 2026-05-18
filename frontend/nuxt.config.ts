@@ -5,11 +5,23 @@ export default defineNuxtConfig({
   
   srcDir: 'app',
 
-  runtimeConfig: {
-    public: {
-      apiBase: 'http://localhost:8000/api' // Базовый URL для бэкенда
-    }
-  },
+    runtimeConfig: {
+      public: {
+        apiBase: '/api'
+      }
+    },
+
+    routeRules: {
+      '/api/**': { 
+        proxy: 'http://localhost:8000/api/**' 
+      }
+    },
+
+  // runtimeConfig: {
+  //   public: {
+  //     apiBase: 'http://localhost:8000/api' // Базовый URL для бэкенда
+  //   }
+  // },
 
   modules: ['@nuxt/eslint'],
   css: ['~/assets/styles/main.scss'],

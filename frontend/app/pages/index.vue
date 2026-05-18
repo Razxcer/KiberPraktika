@@ -4,6 +4,9 @@
     <TheHero />
     <BrandsTicker />
     <AwardsBlock />
+    <ProjectsList/>
+    <NewsBlock/>
+    <ReviewsSlider/>
 
   </main>
 </template>

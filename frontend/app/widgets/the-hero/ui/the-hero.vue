@@ -67,7 +67,7 @@
   }
 
   @include mobile{
-    margin: 20px calc(var(--base-padding-x) / 4);
+    margin: 0px calc(var(--base-padding-x) / 4);
   }
 
   &__bg-snowflake {
@@ -96,13 +96,15 @@
     margin: 0 auto;
     padding: 50px 50px 0 50px;
 
-    @include mobile {
-      flex-direction: column;
-      padding: 40px 20px;
-    }
     @include tablet {
       padding: 20px 10px 0 10px;
     }
+
+    @include mobile {
+      flex-direction: column;
+      padding: 10px 15px;
+    }
+    
   }
 
   // Левый блок контента
@@ -121,7 +123,7 @@
     line-height: 1.2;
     margin: 0 0 40px 0;
 
-    @include mobile { font-size: 28px; }
+    @include mobile { font-size: 22px; }
     @include tablet { font-size: 40px; }
     @include desktop { font-size: 54px; }
   }

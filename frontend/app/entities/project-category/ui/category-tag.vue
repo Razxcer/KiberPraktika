@@ -1,9 +1,25 @@
+<script setup lang="ts">
+import type { ProjectCategoryItem } from '../model/types';
+
+defineProps<{
+  category: ProjectCategoryItem;
+  isActive: boolean;
+}>();
+
+const emit = defineEmits<{
+  (e: 'close'): void;
+}>();
+
+const close=()=>{
+  emit('close');
+}
+
+</script>
+
 <template>
-  <!-- Вся кнопка с анимациями -->
-  <a href="#" rel="nofollow" aria-label="Перейти в Telegram">
-    <button class="ui-icon-button">
+    <button :class="['ui-icon-button', { 'ui-icon-button--active': isActive }]">
       <!-- Контейнер для летающих клякс -->
-      <span class="ui-icon-button__over" aria-hidden="true">
+      <span class="ui-icon-button__over" aria-hidden="true" :style="{animationDelay: 0.5 * category.id + 's'}" >
         
         <!-- 1 клякса -->
         <svg width="74" height="70" viewBox="0 0 74 70" fill="none" xmlns="http://www.w3.org/2000/svg" 
@@ -43,13 +59,14 @@
       
       <!-- Контент самой кнопки (иконка) -->
         <span class="ui-icon-button__content text-h9">
-        Обсудить проект
+          {{ category.name }}
+          <span v-if="isActive" class="ui-icon-button__close" @click.stop="close">✕</span>
         </span>
     </button>
-  </a>
 </template>
 
 <style lang="scss" scoped>
+
 // 1. Анимация для всего контейнера с кляксами
 @keyframes orbit-move {
   0% { transform: translate(-67%, -67%) rotate(0deg); }
@@ -62,26 +79,26 @@
   0% { transform: rotate(360deg); }
   100% { transform: rotate(0deg); }
 }
-
 .ui-icon-button {
   --orb-blur: 7px; // Локальная переменная размытости клякс
-  padding: 5px 0 5px 0;
   position: relative;
   width: 220px;  // Размеры круглой кнопки из дизайна
   height: 40px;
   border-radius: 1.5em;
-  background: var(--dark);
+  background: rgb(245, 245, 247);
   cursor: pointer;
   display: inline-flex;
   align-items: center;
+  text-align: center;
   justify-content: center;
   border: none;
   text-decoration: none;
   color: inherit;
-  isolation: isolate; 
   overflow: hidden; // Регулировка границ
+  flex-shrink: 0;
 
-  &__over {
+
+ &__over {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -99,6 +116,16 @@
     opacity: 1;
   }
 
+  &--active {
+    background-color: var(--blue-button);
+    color: var(--white);
+    border-color: var(--blue-button);
+  }
+
+  &--active &__over {
+    opacity: 1;
+  }
+
   &:hover{
     color: var(--white);
     border: none;
@@ -106,9 +133,14 @@
   }
 
   &__content {
-    width: 60%;
+    width: 800%;
     height: 60%;
     position: relative;
+  }
+  
+  &__close {
+    font-size: 14px;
+    opacity: 0.8;
   }
 
   &__orb-blue, &__orb-cyan, &__orb-pink {

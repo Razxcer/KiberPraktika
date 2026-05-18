@@ -9,7 +9,7 @@ defineProps<{
 
 <template>
   <!-- Если проект "большой" по ТЗ, добавляем модификатор БЭМ --big -->
-  <article :class="['project-card', { 'project-card--big': project.is_big }]">
+  <article class="project-card">
     <div class="project-card__image-wrapper">
       <img 
         :src="project.image.original_url" 
@@ -77,12 +77,6 @@ defineProps<{
     line-height: 1.4;
     margin: 0;
   }
-
-  // Модификатор БЭМ для больших карточек (если сетка будет строиться на гридах)
-  &--big {
-    @include desktop {
-      grid-column: span 2; 
-    }
-  }
+ 
 }
 </style>
