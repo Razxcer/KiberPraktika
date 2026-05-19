@@ -1,12 +1,12 @@
 <template>
   <main class="main-page">
-    <TheHeader />
     <TheHero />
     <BrandsTicker />
     <AwardsBlock />
     <ProjectsList/>
     <NewsBlock/>
     <ReviewsSlider/>
+    <TheHeroLight/>
 
   </main>
 </template>

@@ -17,7 +17,7 @@ defineProps<{
         class="project-card__image"
       />
       <!-- Синяя круглая стрелочка из дизайна -->
-      <div class="project-card__arrow">↗</div>
+      <a :href="project.link" class="project-card__arrow">↗</a>
     </div>
     <h3 class="project-card__title">{{ project.title }}</h3>
     <p class="project-card__description">{{ project.description }}</p>
@@ -46,7 +46,7 @@ defineProps<{
   }
 
   &:hover &__image {
-    transform: scale(1.03); // Эффект при наведении
+    transform: scale(1.03);
   }
 
   &__arrow {
@@ -62,6 +62,18 @@ defineProps<{
     align-items: center;
     justify-content: center;
     font-weight: bold;
+    opacity: 0;
+  }
+
+  &:hover &__arrow {
+    opacity: 1;
+    transition: 0.3s;
+  }
+
+  &__arrow:hover {
+    opacity: 1;
+    transform: scale(1.1);
+    transition: 0.3s;
   }
 
   &__title {
