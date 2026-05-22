@@ -40,18 +40,18 @@
       </span>
       
       <!-- Контент самой кнопки (иконка) -->
-      <div class="ui-icon-button__content-box">
-        <slot/>
-      </div>
+        <span class="ui-icon-button__content">
+            <slot/>
+        </span>
     </button>
 </template>
 
 <style lang="scss" scoped>
 // 1. Анимация для всего контейнера с кляксами
 @keyframes orbit-move {
-  0% { transform: translate(-60%, -60%) rotate(0deg); }
-  50% { transform: translate(-40%, -40%) rotate(180deg); }
-  100% { transform: translate(-60%, -60%) rotate(360deg); }
+  0% { transform: translate(-67%, -67%) rotate(0deg); }
+  50% { transform: translate(-33%, -33%) rotate(180deg); }
+  100% { transform: translate(-67%, -67%) rotate(360deg); }
 }
 
 // 2. Анимация для самих клякс (компенсация в противоположную сторону)
@@ -61,22 +61,24 @@
 }
 
 .ui-icon-button {
-  --orb-blur: 15px; // Локальная переменная размытости клякс
-
+  --orb-blur: 35px; // Локальная переменная размытости клякс
+  padding: 0;
   position: relative;
-  width: 40px;  // Размеры круглой кнопки из дизайна
+  // max-width: 380px;  // Размеры круглой кнопки из дизайна
+  // min-width: 200px;
+  width: fit-content;
+  min-width: max-content; 
   height: 40px;
-  border-radius: 50%;
-  background: transparent;
+  border-radius: 1.5em;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid currentColor;
+  border: none;
   text-decoration: none;
   color: inherit;
   isolation: isolate; 
-  overflow: hidden; // Регулировка границ (hidden - внутри границы кнопки, visible - вылезает за границы кнопки)
+  overflow: hidden; // Регулировка границ
 
   &__over {
     position: absolute;
@@ -99,41 +101,45 @@
   &:hover{
     color: var(--white);
     border: none;
+    background: var(--blue-button);
   }
 
-  &__content-box {
-    width: 60%;
-    height: 60%;
+  &__content {
+    width: 100%;
+    height: 100%;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1.5em;
   }
 
   &__orb-blue, &__orb-cyan, &__orb-pink {
     position: absolute;
     top: 0;
     left: 0;
-    width: 74px;
-    height: 70px;
+    width: 280px;
+    height: 280px;
     transform-origin: center center;
     animation: orbit-compensate 5s infinite linear;
     filter: blur(var(--orb-blur)); 
   }
-  
   &__orb-blue {
-    color: var(--blue);
-    margin-top: -10px;
-    margin-left: 5px;
+    color: var(--cerulean);
+    margin-top: -70px;
+    margin-left: -150px;
   }
 
   &__orb-cyan {
     color: var(--gradient-cyan-bright);
-    margin-top: 15px;
-    margin-left: 0px;
+    margin-top: -150px;
+    margin-left: -40px;
   }
 
   &__orb-pink {
     color: var(--gradient-pink-bright);
-    margin-top: 0px;
-    margin-left: -20px;
+    margin-top: -40px;
+    margin-left: -30px;
   }
 }
 </style>

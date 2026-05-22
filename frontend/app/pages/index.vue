@@ -11,7 +11,7 @@
   </main>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .main-page {
   padding-top: 90px;
 }

@@ -1,27 +1,5 @@
-<script setup>
-
-defineProps({
-  title: {
-    type: String,
-    default: 'Отправьте Propsы!'
-  },
-  href: {
-    type: String,
-    default: "#"
-  },
-  isActive: {
-    type: Boolean,
-    default: false
-  }
-})
-
-</script>
-
-
 <template>
-  <!-- Вся кнопка с анимациями -->
-  <a :href="href" rel="nofollow">
-    <button :class="['ui-icon-button', { 'ui-icon-button--active': isActive }]">
+    <button class="ui-icon-button">
       <!-- Контейнер для летающих клякс -->
       <span class="ui-icon-button__over" aria-hidden="true">
         
@@ -62,20 +40,18 @@ defineProps({
       </span>
       
       <!-- Контент самой кнопки (иконка) -->
-        <span class="ui-icon-button__content text-h9">
-          {{title}}
-          <span v-if="isActive" class="ui-icon-button__close">✕</span>
-        </span>
+      <div class="ui-icon-button__content-box">
+        <slot/>
+      </div>
     </button>
-  </a>
 </template>
 
 <style lang="scss" scoped>
 // 1. Анимация для всего контейнера с кляксами
 @keyframes orbit-move {
-  0% { transform: translate(-67%, -67%) rotate(0deg); }
-  50% { transform: translate(-33%, -33%) rotate(180deg); }
-  100% { transform: translate(-67%, -67%) rotate(360deg); }
+  0% { transform: translate(-60%, -60%) rotate(0deg); }
+  50% { transform: translate(-40%, -40%) rotate(180deg); }
+  100% { transform: translate(-60%, -60%) rotate(360deg); }
 }
 
 // 2. Анимация для самих клякс (компенсация в противоположную сторону)
@@ -86,21 +62,21 @@ defineProps({
 
 .ui-icon-button {
   --orb-blur: 7px; // Локальная переменная размытости клякс
-  padding: 5px 0 5px 0;
+
   position: relative;
-  width: 220px;  // Размеры круглой кнопки из дизайна
+  width: 40px;  // Размеры круглой кнопки из дизайна
   height: 40px;
-  border-radius: 1.5em;
-  background: rgb(245, 245, 247);
+  border-radius: 50%;
+  background: var(--dark);
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border: none;
   text-decoration: none;
-  color: inherit;
+  color: var(--white);
   isolation: isolate; 
-  overflow: hidden; // Регулировка границ
+  overflow: hidden; // Регулировка границ (hidden - внутри границы кнопки, visible - вылезает за границы кнопки)
 
   &__over {
     position: absolute;
@@ -120,55 +96,43 @@ defineProps({
     opacity: 1;
   }
 
-  &--active {
-    background-color: var(--blue-button);
-    color: var(--white);
-    border-color: var(--blue-button);
-  }
-
   &:hover{
     color: var(--white);
-    border: none;
-    background: var(--blue-button);
   }
 
-  &__content {
+  &__content-box {
     width: 60%;
     height: 60%;
     position: relative;
-  }
-  
-  &__close {
-    font-size: 10px;
-    opacity: 0.8;
   }
 
   &__orb-blue, &__orb-cyan, &__orb-pink {
     position: absolute;
     top: 0;
     left: 0;
-    width: 280px;
-    height: 280px;
+    width: 100px;
+    height: 100px;
     transform-origin: center center;
     animation: orbit-compensate 5s infinite linear;
     filter: blur(var(--orb-blur)); 
   }
+  
   &__orb-blue {
-    color: var(--cerulean);
-    margin-top: -70px;
-    margin-left: -150px;
+    color: var(--blue);
+    margin-top: -25px;
+    margin-left: -12px;
   }
 
   &__orb-cyan {
     color: var(--gradient-cyan-bright);
-    margin-top: -150px;
-    margin-left: -40px;
+    margin-top: 5px;
+    margin-left: 5px;
   }
 
   &__orb-pink {
     color: var(--gradient-pink-bright);
-    margin-top: -40px;
-    margin-left: -30px;
+    margin-top: 15px;
+    margin-left: -25px;
   }
 }
 </style>
