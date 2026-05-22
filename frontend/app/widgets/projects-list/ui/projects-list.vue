@@ -103,7 +103,7 @@
 </script>
 
 <template>
-  <section class="projects-widget" id="projects">
+  <section class="projects-widget">
     <div class="projects-widget__container">
       <h2 class="projects-widget__main-title">Наши проекты</h2>
 

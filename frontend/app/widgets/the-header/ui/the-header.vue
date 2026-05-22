@@ -73,7 +73,7 @@ onUnmounted(() => {
       <!-- Меню навигации -->
       <nav class="the-header__nav">
         <ul class="the-header__menu ">
-          <li class="the-header__menu-item"><a href="#projects" class="the-header__link">Проекты</a></li>
+          <li class="the-header__menu-item"><NuxtLink to="/projects" class="the-header__link">Проекты</NuxtLink></li>
           <li class="the-header__menu-item"><a href="#services" class="the-header__link">Услуги</a></li>
           <li class="the-header__menu-item"><a href="#about" class="the-header__link">О компании</a></li>
           <li class="the-header__menu-item"><a href="#career" class="the-header__link">Карьера</a></li>
@@ -151,7 +151,7 @@ onUnmounted(() => {
         <!-- Белое меню со ссылками -->
         <nav class="the-header__mobile-nav-box">
           <ul class="the-header__mobile-menu">
-            <li><a href="#projects" @click="toggleMenu" class="the-header__mobile-link">Проекты</a></li>
+            <li><NuxtLink to="/projects" @click="toggleMenu" class="the-header__mobile-link">Проекты</NuxtLink></li>
             <li><a href="#services" @click="toggleMenu" class="the-header__mobile-link the-header__mobile-link--active">Услуги</a></li>
             <li><a href="#about" @click="toggleMenu" class="the-header__mobile-link">О компании</a></li>
             <li><a href="#career" @click="toggleMenu" class="the-header__mobile-link">Карьера</a></li>

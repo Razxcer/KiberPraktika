@@ -10,15 +10,15 @@ defineProps<{
 <template>
   <!-- Если проект "большой" по ТЗ, добавляем модификатор БЭМ --big -->
   <article class="project-card">
-    <div class="project-card__image-wrapper">
+    <NuxtLink :to="`/projects/${project.slug}`" class="project-card__image-wrapper">
       <img 
         :src="project.image.original_url" 
         :alt="project.title" 
         class="project-card__image"
       />
       <!-- Синяя круглая стрелочка из дизайна -->
-      <a :href="project.link" class="project-card__arrow">↗</a>
-    </div>
+      <NuxtLink :to="`/projects/${project.slug}`" class="project-card__arrow">↗</NuxtLink>
+    </NuxtLink>
     <h3 class="project-card__title">{{ project.title }}</h3>
     <p class="project-card__description">{{ project.description }}</p>
   </article>
