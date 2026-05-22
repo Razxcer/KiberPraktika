@@ -1,38 +1,43 @@
 <script lang="ts" setup>
-import type { ProjectContent, ProjectItem } from '#types';
+import type { ProjectItemShow, ProjectResponseShow } from '#types';
 
 const route = useRoute();
+const router = useRouter();
 const projectSlug = route.params.slug
 console.log(projectSlug)
 
-const { data, pending, error } =  useProjectFetch<{ data: ProjectItem }>(`/projects/${projectSlug}`)
+const { data, pending, error } =  useProjectFetch<ProjectResponseShow>(`/projects/${projectSlug}`)
 
-const project = computed(()=> data.value?.data);
+const project = computed(()=> data.value?.data.project);
 
-watch(pending, ()=>{
-    console.log(project.value)
-})
+const goBack=()=>{
+    router.back();
+}
 </script>
 
 <template>
     <div class="project">
-        <div class="project__container">
-            <div class="project__status" v-if="pending">Подождите...</div>
-            <div class="project__status project__status--error" v-else-if="error">Произошла ошибка</div>
-
-            <div class="project__content" v-else v-for="content in project?.content">
-                <p class="project__paragraph" v-if="content.type == 'paragraph'" v-html="content.data.content" />
-                <img class="project__paragraph" v-else-if="content.type == 'image'" :src="content.data.content" />
+        <p class="project__status" v-if="pending">Подождите...</p>
+        <p class="project__status project__status--error" v-else-if="error">Произошла ошибка</p>
+        <div class="project__container" v-else>
+            <div class="project__back-container">
+                <button class="project__go-back" @click="goBack">< Назад</button>
+            </div>
+            <h2 class="project__title">Кейс: {{ project.title }}</h2>
+            <div class="project__about" >
+                <div class="project__content" v-for="content in project.content">
+                    <div class="project__paragraph" v-if="content.type == 'paragraph'" v-html="content.data.content" />
+                    <img class="project__image" v-else-if="content.type == 'image'" :src="content.data.image" />
+                </div>
             </div>
         </div>
     </div>
-
 </template>
 
 <style lang="scss" scoped>
 .project{
     width: 100%;
-    padding: 80px 0;
+    padding: 20px 0;
 
     &__container{
         max-width: 1440px;
@@ -46,15 +51,56 @@ watch(pending, ()=>{
         }
     }
 
+    &__back-container{
+        width: 60%;
+        margin: 0 auto;
+        padding-bottom: 30px;
+    }
+
+    &__go-back{
+        font-family: $font-text;
+        font-weight: 500;
+        font-size: 16px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        color: var(--gray-dark);
+    }
+
+    &__title{
+        width: 60%;
+        font-family: $font-title;
+        font-size: 54px;
+        margin: 0 auto;
+    }
+
     &__status{
+        width: 100%;
         text-align: center;
-        color: var(--gray-light);
+        color: var(--gray-dark);
         font-size: 14px;
         font-family: $font-text;
 
         &--error{
             color: var(--red);
         }
+    }
+
+    &__content {
+        width: 100%;
+    }
+
+    &__paragraph{
+        width: 60%;
+        margin: 0 auto;
+        padding: 20px 0;
+        font-weight: 500;
+        font-family: $font-text;
+        font-size: 17px;
+    }
+
+    &__image{
+        width: 100%;
     }
 }
 

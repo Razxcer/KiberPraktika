@@ -1,14 +1,12 @@
 <script setup lang="ts">
 import type { ProjectItem } from '#types';
 
-// Принимаем данные проекта через props
 defineProps<{
   project: ProjectItem;
 }>();
 </script>
 
 <template>
-  <!-- Если проект "большой" по ТЗ, добавляем модификатор БЭМ --big -->
   <article class="project-card">
     <NuxtLink :to="`/projects/${project.slug}`" class="project-card__image-wrapper">
       <img 
@@ -16,7 +14,6 @@ defineProps<{
         :alt="project.title" 
         class="project-card__image"
       />
-      <!-- Синяя круглая стрелочка из дизайна -->
       <NuxtLink :to="`/projects/${project.slug}`" class="project-card__arrow">↗</NuxtLink>
     </NuxtLink>
     <h3 class="project-card__title">{{ project.title }}</h3>

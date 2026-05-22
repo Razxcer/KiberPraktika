@@ -1,3 +1,4 @@
+import * from './awards.ts';
 export interface ProjectImage {
   uuid: string;
   mime_type: string;
@@ -18,7 +19,6 @@ export interface ProjectItem {
   link: string;
   is_big: boolean;
   is_case: boolean;
-  content?: ProjectContent[];
 }
 
 export interface ProjectsResponse {
@@ -34,13 +34,6 @@ export interface ProjectsResponse {
   };
 }
 
-export interface ProjectContent {
-  data: {
-    content: string;
-  };
-  type: string;
-}
-
 export interface ProjectCategoryItem {
   id: number;
   name: string;
@@ -49,4 +42,34 @@ export interface ProjectCategoryItem {
 export interface ProjectCategoriesResponse {
   message: string;
   data: ProjectCategoryItem[];
+}
+
+export interface ProjectContent {
+  data: {
+    content: string;
+  };
+  type: string;
+}
+
+export interface ProjectItemShow {
+  id: number;
+  title: string;
+  description: string;
+  price: number;
+  time: string;
+  image?: ProjectImage;
+  image_mobile?: ProjectImage;
+  video_cover?: ProjectImage | null;
+  link: string;
+  is_big: boolean;
+  is_case: boolean;
+  content: ProjectContent[];
+}
+
+export interface ProjectResponseShow {
+  message: string;
+  data: {
+    project: ProjectItemShow;
+  };
+  awards: AwardItem[];
 }
