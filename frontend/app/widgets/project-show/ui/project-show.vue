@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { ProjectContent, ProjectItem } from '~/entities/project/model/types';
+import type { ProjectContent, ProjectItem } from '#types';
 
 const route = useRoute();
 const projectSlug = route.params.slug

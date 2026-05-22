@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ReviewItem } from '../model/types';
+import type { ReviewItem } from '#types';
 
 defineProps<{
   review: ReviewItem;

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { NewsItem } from '../model/types';
+import type { NewsItem } from '#types';
 
 const props = defineProps<{
   news: NewsItem;

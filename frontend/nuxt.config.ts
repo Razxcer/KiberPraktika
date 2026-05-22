@@ -15,7 +15,7 @@ export default defineNuxtConfig({
   // },
 
   alias: {
-    '@types': '~/model/types'
+    '#types': '../app/model/types'
   },
 
   runtimeConfig: {

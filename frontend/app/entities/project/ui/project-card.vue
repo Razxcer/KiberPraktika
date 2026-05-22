@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ProjectItem } from '../model/types';
+import type { ProjectItem } from '#types';
 
 // Принимаем данные проекта через props
 defineProps<{

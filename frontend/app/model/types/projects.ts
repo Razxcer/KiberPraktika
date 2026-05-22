@@ -40,3 +40,13 @@ export interface ProjectContent {
   };
   type: string;
 }
+
+export interface ProjectCategoryItem {
+  id: number;
+  name: string;
+}
+
+export interface ProjectCategoriesResponse {
+  message: string;
+  data: ProjectCategoryItem[];
+}

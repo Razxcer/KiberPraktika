@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { AwardItem } from '../model/types';
+import type { AwardItem } from '#types';
 
 defineProps<{
   award: AwardItem;

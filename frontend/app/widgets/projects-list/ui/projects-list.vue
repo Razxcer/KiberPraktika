@@ -1,6 +1,6 @@
 <script setup lang="ts">
-  import type { ProjectCategoriesResponse } from '~/entities/project-category/model/types';
-  import type { ProjectsResponse,  ProjectItem } from '~/entities/project/model/types';
+  import type { ProjectCategoriesResponse } from '#types';
+  import type { ProjectsResponse,  ProjectItem } from '#types';
 
 
   const { data: categoriesData } = await useProjectFetch<ProjectCategoriesResponse>('/project-categories');
