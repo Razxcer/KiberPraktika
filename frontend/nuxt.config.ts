@@ -5,9 +5,6 @@ export default defineNuxtConfig({
   
   srcDir: 'app',
 
-
-
-
  // runtimeConfig: {
   //   public: {
   //     apiBase: 'http://localhost:8000/api' // Базовый URL для бэкенда

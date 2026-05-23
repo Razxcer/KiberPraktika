@@ -1,11 +1,11 @@
 <template>
-  <div class="projects-page">
-    <ProjectsList />
+  <div class="services-page">
+    <ServicesBlock/>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.projects-page {
+.services-page {
   padding: 40px 0;
 }
 </style>

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { ProjectItemShow, ProjectResponseShow } from '#types';
+import type { ProjectResponseShow } from '#types';
 
 const route = useRoute();
 const router = useRouter();
@@ -52,7 +52,7 @@ const goBack=()=>{
     }
 
     &__back-container{
-        width: 60%;
+        width: 90%;
         margin: 0 auto;
         padding-bottom: 30px;
     }
@@ -72,6 +72,11 @@ const goBack=()=>{
         font-family: $font-title;
         font-size: 54px;
         margin: 0 auto;
+
+        @include mobile{
+            font-size: 30px;
+            width: 80%;
+        }
     }
 
     &__status{
@@ -97,6 +102,10 @@ const goBack=()=>{
         font-weight: 500;
         font-family: $font-text;
         font-size: 17px;
+
+        @include mobile{
+            width: 90%;
+        }
     }
 
     &__image{

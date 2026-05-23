@@ -6,8 +6,6 @@
     <ProjectsList/>
     <NewsBlock/>
     <ReviewsSlider/>
-    <TheHeroLight/>
-
   </main>
 </template>
 

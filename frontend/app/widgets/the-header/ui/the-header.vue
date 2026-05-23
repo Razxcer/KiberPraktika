@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const isScrolled = ref(false);
 const isMenuOpen = ref(false);
+const currentLink = ref("");
 
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 20;
@@ -66,15 +67,14 @@ onUnmounted(() => {
             <path d="M3.19717 12.3614L4.78175 16.4199L9.22277 14.7608L9.13639 10.6487L3.19717 12.3614Z" fill="currentColor"></path>
             <path d="M14.5255 3.645L18.0435 6.2153L15.3033 10.084L11.3502 8.94829L14.5255 3.645Z" fill="currentColor"></path>
           </svg>
-        <!-- <svg width="44" height="43" viewBox="0 0 44 43" fill="none" xmlns="http://www.w3.org/2000/svg" class="b-letter" style="opacity:0;scale:none;translate:none;rotate:none;transform:scale(0, 0);" data-v-9c2cce72=""><path d="M43.375 0V6.125H12.75V18.375H18.875V24.5H12.75V36.75H31.125V18.375H18.875V12.25H37.25V18.375H43.375V36.75H37.25V42.875H6.625V36.75H0.5V6.125H6.625V0H43.375Z" fill="#0B0D20" data-v-9c2cce72=""></path></svg><svg width="39" height="37" viewBox="0 0 39 37" fill="none" xmlns="http://www.w3.org/2000/svg" class="star star-1" style="opacity: 0; transform: scale(0);" data-v-9c2cce72=""><path d="M14.6766 0.338998H24.3046L23.7236 13.038L35.5926 8.39L38.5806 17.603L26.2966 21.006L34.4306 30.966L26.6286 36.61L19.4906 25.986L12.3526 36.61L4.5506 30.966L12.6846 21.006L0.483598 17.603L3.3886 8.39L15.3406 13.038L14.6766 0.338998Z" fill="#9E70FF" data-v-9c2cce72=""></path></svg><svg width="39" height="37" viewBox="0 0 39 37" fill="none" xmlns="http://www.w3.org/2000/svg" class="star star-2" style="opacity: 0; transform: scale(0);" data-v-9c2cce72=""><path d="M14.6766 0.338998H24.3046L23.7236 13.038L35.5926 8.39L38.5806 17.603L26.2966 21.006L34.4306 30.966L26.6286 36.61L19.4906 25.986L12.3526 36.61L4.5506 30.966L12.6846 21.006L0.483598 17.603L3.3886 8.39L15.3406 13.038L14.6766 0.338998Z" fill="#2D41F9" data-v-9c2cce72=""></path></svg><svg class="sharp" width="46" height="44" viewBox="0 0 46 44" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity: 0; transform: scale(0);" data-v-9c2cce72=""><path d="M11.3533 0.499997H19.9953L14.8913 44H6.24933L11.3533 0.499997ZM31.0733 0.499997H39.7153L34.6113 44H25.9693L31.0733 0.499997ZM2.18933 11.288H45.1673V18.712H2.18933V11.288ZM0.797328 25.846H43.7753V33.27H0.797328V25.846Z" fill="#49FFE9" data-v-9c2cce72=""></path></svg><svg class="r-letter" width="44" height="43" viewBox="0 0 44 43" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity: 0; transform: scale(0);" data-v-9c2cce72=""><path d="M0.5 42.875V0H37.25V6.125H43.375V24.5H37.25V30.625H12.75V42.875H0.5ZM12.75 24.5H31.125V6.125H12.75V24.5Z" fill="#9E70FF" data-v-9c2cce72=""></path></svg><svg class="comment" width="42" height="48" viewBox="0 0 42 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:0;" data-v-9c2cce72=""><path d="M16.8684 0.933999H25.1044L8.86441 47.566H0.628406L16.8684 0.933999ZM33.1243 0.933999H41.3603L25.1203 47.566H16.8843L33.1243 0.933999Z" fill="#49FFE9" data-v-9c2cce72=""></path></svg> -->
         </span>
       </a>
 
       <!-- Меню навигации -->
       <nav class="the-header__nav">
         <ul class="the-header__menu ">
-          <li class="the-header__menu-item"><NuxtLink to="/projects" class="the-header__link">Проекты</NuxtLink></li>
-          <li class="the-header__menu-item"><a href="#services" class="the-header__link">Услуги</a></li>
+          <li class="the-header__menu-item"><NuxtLink @click="currentLink='project'" to="/projects" class="the-header__link" :class="{'the-header__link--active' : currentLink == 'project'}">Проекты</NuxtLink></li>
+          <li class="the-header__menu-item"><NuxtLink @click="currentLink='service'" to="/services" class="the-header__link" :class="{'the-header__link--active' : currentLink == 'service'}">Услуги</NuxtLink></li>
           <li class="the-header__menu-item"><a href="#about" class="the-header__link">О компании</a></li>
           <li class="the-header__menu-item"><a href="#career" class="the-header__link">Карьера</a></li>
           <li class="the-header__menu-item"><a href="#blog" class="the-header__link">Блог</a></li>
@@ -152,7 +152,7 @@ onUnmounted(() => {
         <nav class="the-header__mobile-nav-box">
           <ul class="the-header__mobile-menu">
             <li><NuxtLink to="/projects" @click="toggleMenu" class="the-header__mobile-link">Проекты</NuxtLink></li>
-            <li><a href="#services" @click="toggleMenu" class="the-header__mobile-link the-header__mobile-link--active">Услуги</a></li>
+            <li><NuxtLink to="/services" @click="toggleMenu" class="the-header__mobile-link the-header__mobile-link--active">Услуги</NuxtLink></li>
             <li><a href="#about" @click="toggleMenu" class="the-header__mobile-link">О компании</a></li>
             <li><a href="#career" @click="toggleMenu" class="the-header__mobile-link">Карьера</a></li>
             <li><a href="#blog" @click="toggleMenu" class="the-header__mobile-link">Блог</a></li>
@@ -251,6 +251,10 @@ onUnmounted(() => {
     transition: background-position 0.4s ease-in-out;
 
     &:hover {
+      background-position: right center;
+    }
+
+    &--active {
       background-position: right center;
     }
   }

@@ -5,7 +5,7 @@
     <div class="layout-default__content">
       <slot />
     </div>
-    
+    <TheHeroLight/>
     <TheFooter />
   </div>
 </template>
