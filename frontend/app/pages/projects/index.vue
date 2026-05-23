@@ -1,6 +1,7 @@
 <template>
   <div class="projects-page">
     <ProjectsList />
+    <TheHeroLight/>
   </div>
 </template>
 

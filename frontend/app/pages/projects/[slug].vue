@@ -1,6 +1,7 @@
 <template>
     <div class="project-page">
         <ProjectShow/>
+        <TheHeroLight/>
     </div>
 </template>
 
