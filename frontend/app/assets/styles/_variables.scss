@@ -1,5 +1,4 @@
 // Брейкпоинты из ТЗ (Мобилка, Планшет, Десктоп)
-$breakpoint-mobile: 320px;
 $breakpoint-tablet: 768px;
 $breakpoint-desktop: 1024px;
 
@@ -14,6 +13,6 @@ $breakpoint-desktop: 1024px;
   @media (min-width: #{$breakpoint-desktop}) { @content; }
 }
 
-// Шрифты из ТЗ
+// Шрифты
 $font-title: 'Unbounded', sans-serif;
 $font-text: 'Wix Madefor Text', sans-serif;

@@ -107,12 +107,42 @@
 
     @include mobile {
       text-align: center; 
-      gap: 48px;
     }
 
     @include tablet {
       text-align: center;
-      gap: 48px;
+    }
+  }
+
+  &__logo{
+    @include tablet{
+      order: 0;
+      padding-bottom: 5px;
+    }
+    @include mobile{
+      order: 0;
+      padding-bottom: 5px;
+    }
+  }
+
+  &__nav{
+    @include tablet{
+      order: 2;
+      border-top: 2px solid var(--gray-light);
+      border-bottom: 2px solid var(--gray-light);
+      box-sizing: border-box;
+      margin-bottom: 20px;
+      padding: 10px 0;
+      width: 100%;
+    }
+    @include mobile{
+      order: 2;
+      border-top: 2px solid var(--gray-light);
+      border-bottom: 2px solid var(--gray-light);
+      box-sizing: border-box;
+      margin-bottom: 20px;
+      padding: 10px 0;
+      width: 100%;
     }
   }
 
@@ -128,6 +158,12 @@
         align-items: center;
     }
 
+    @include tablet {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
   }
 
 
@@ -138,7 +174,11 @@
     
 
     @include mobile {
-        align-self: center; 
+      align-self: center; 
+    }
+
+    @include tablet {
+      align-self: center; 
     }
     
   }
@@ -163,11 +203,11 @@
   &__socials {
 
     @include tablet {
-        align-self: center;
+      align-self: center;
     }
 
     @include mobile {
-        align-self: center;
+      align-self: center;
     }
   }
 
@@ -203,6 +243,14 @@
     flex-direction: column;
     gap: 8px;
     margin-bottom: 20px;
+
+    @include tablet{
+      order: 1;
+    }
+
+    @include mobile{
+      order: 1;
+    }
   }
 
   &__phone {
