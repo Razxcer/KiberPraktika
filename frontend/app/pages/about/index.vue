@@ -1,6 +1,7 @@
 <template>
     <div class="about-page">
-
+      <AboutBlock/>
+      <SeeMoreProjects :title="'Ознакомьтесь с нашими проектами'" class="about-page__see-more" />
     </div>
 </template>
 
@@ -8,5 +9,8 @@
 .about-page {
   padding-top: 90px;
 
+  // &__see-more{
+  //   margin-top: -40px;
+  // }
 }
 </style>

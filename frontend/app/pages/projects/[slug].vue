@@ -1,6 +1,7 @@
 <template>
     <div class="project-page">
         <ProjectShow/>
+        <SeeMoreProjects :title="'Ознакомьтесь с другими нашими проектами'"/>
     </div>
 </template>
 

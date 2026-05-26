@@ -77,12 +77,12 @@ defineProps<{
     font-size: 24px;
     font-weight: 700;
     margin: 0 0 8px 0;
-    color: #111;
+    color: currentColor;
   }
 
   &__description {
     font-size: 16px;
-    color: #666;
+    color: currentColor;
     line-height: 1.4;
     margin: 0;
   }

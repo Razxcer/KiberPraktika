@@ -1,4 +1,4 @@
-import * from './awards.ts';
+import type { AwardItem } from './awards.ts';
 export interface ProjectImage {
   uuid: string;
   mime_type: string;

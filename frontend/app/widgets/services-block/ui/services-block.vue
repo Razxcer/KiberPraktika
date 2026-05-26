@@ -23,7 +23,9 @@
         font-weight: 600;
         text-align: center;
         background-color: var(--blue);
-        background-image:url('~/assets/img/background-gradient-short.png');
+        background-image:
+        url('~/assets/img/background-gradient-short.png'),
+        linear-gradient(to right,  var(--gradient-tz-2), var(--gradient-tz-3), var(--gradient-tz-1));
         background-repeat: repeat-x;
 
         @include mobile{

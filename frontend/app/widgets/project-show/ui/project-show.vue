@@ -4,7 +4,6 @@ import type { ProjectResponseShow } from '#types';
 const route = useRoute();
 const router = useRouter();
 const projectSlug = route.params.slug
-console.log(projectSlug)
 
 const { data, pending, error } =  useProjectFetch<ProjectResponseShow>(`/projects/${projectSlug}`)
 

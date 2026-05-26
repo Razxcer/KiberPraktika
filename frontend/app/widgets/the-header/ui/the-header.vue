@@ -73,9 +73,9 @@ onUnmounted(() => {
       <!-- Меню навигации -->
       <nav class="the-header__nav">
         <ul class="the-header__menu ">
-          <li class="the-header__menu-item"><NuxtLink @click="currentLink='project'" to="/projects" class="the-header__link" :class="{'the-header__link--active' : currentLink == 'project'}">Проекты</NuxtLink></li>
-          <li class="the-header__menu-item"><NuxtLink @click="currentLink='service'" to="/services" class="the-header__link" :class="{'the-header__link--active' : currentLink == 'service'}">Услуги</NuxtLink></li>
-          <li class="the-header__menu-item"><NuxtLink @click="currentLink='about'" to="/about" class="the-header__link">О компании</NuxtLink></li>
+          <li class="the-header__menu-item"><NuxtLink  to="/projects" class="the-header__link" :class="{'the-header__link--active' : currentLink == 'project'}">Проекты</NuxtLink></li>
+          <li class="the-header__menu-item"><NuxtLink  to="/services" class="the-header__link" :class="{'the-header__link--active' : currentLink == 'service'}">Услуги</NuxtLink></li>
+          <li class="the-header__menu-item"><NuxtLink  to="/about" class="the-header__link">О компании</NuxtLink></li>
           <li class="the-header__menu-item"><a href="#career" class="the-header__link">Карьера</a></li>
           <li class="the-header__menu-item"><a href="#blog" class="the-header__link">Блог</a></li>
           <li class="the-header__menu-item"><a href="#news" class="the-header__link">Новости</a></li>
@@ -248,7 +248,7 @@ onUnmounted(() => {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     
-    transition: background-position 0.4s ease-in-out;
+    transition: background-position 0.1s ease;
 
     &:hover {
       background-position: right center;

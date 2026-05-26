@@ -24,21 +24,21 @@
         queryParams.project_category_id = activeCategoryId.value;
       }
 
-      const response = await $fetch<ProjectsResponse>('/projects', {
+      const response = await useProjectFetch<ProjectsResponse>('/projects', {
         baseURL: config.public.apiBase,
         query: queryParams
       });
 
-      if (response?.data) {
+      if (response.data.value) {
         if (append) {
-          projects.value = [...projects.value, ...response.data.items];
+          projects.value = [...projects.value, ...response.data.value.data.items];
         } else {
-          projects.value = response.data.items;
+          projects.value = response.data.value.data.items;
         }
         
         // Обновляем счетчики страниц с бэкенда (приводим строки к числам через +)
-        currentPage.value = +response.data.pagination.page;
-        lastPage.value = +response.data.pagination.last_page;
+        currentPage.value = +response.data.value.data.pagination.page;
+        lastPage.value = +response.data.value.data.pagination.last_page;
       }
     } catch (err) {
       error.value = true;
