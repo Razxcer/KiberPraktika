@@ -61,6 +61,14 @@
             max-width: 1440px;
             width: 50%;
             margin: 0 auto;
+
+            @include tablet{
+                width: 80%;
+            }
+
+            @include mobile{
+                width: 90%;
+            }
         }
 
         &__title{
@@ -68,10 +76,20 @@
             font-family: $font-title;
             font-weight: 600;
             padding: 50px 0;
+            
+            @include mobile{
+                font-size: 30px;
+                padding: 30px 0;
+            }
 
             &--small{
                 font-size: 26px;
                 width: 80%;
+
+                @include mobile{
+                    font-size: 20px;
+                    width: 90%;
+                }
             }
         }
 
@@ -82,6 +100,11 @@
                 width: 60%;
                 grid-template-columns: 1fr 1fr;
                 gap: 30px;
+
+                @include mobile{
+                    grid-template-columns: 1fr;
+                    margin: 0 auto;
+                }
                 
             }
 
@@ -90,6 +113,12 @@
                 grid-template-columns: 1fr 1fr 1fr;
                 gap: 60px;
                 padding-bottom: 40px;
+
+                @include mobile{
+                    grid-template-columns: 1fr;
+                    margin: 0 auto;
+                    width: 80%;
+                }
             }
         }
 

@@ -75,7 +75,7 @@ onUnmounted(() => {
         <ul class="the-header__menu ">
           <li class="the-header__menu-item"><NuxtLink @click="currentLink='project'" to="/projects" class="the-header__link" :class="{'the-header__link--active' : currentLink == 'project'}">Проекты</NuxtLink></li>
           <li class="the-header__menu-item"><NuxtLink @click="currentLink='service'" to="/services" class="the-header__link" :class="{'the-header__link--active' : currentLink == 'service'}">Услуги</NuxtLink></li>
-          <li class="the-header__menu-item"><a href="#about" class="the-header__link">О компании</a></li>
+          <li class="the-header__menu-item"><NuxtLink @click="currentLink='about'" to="/about" class="the-header__link">О компании</NuxtLink></li>
           <li class="the-header__menu-item"><a href="#career" class="the-header__link">Карьера</a></li>
           <li class="the-header__menu-item"><a href="#blog" class="the-header__link">Блог</a></li>
           <li class="the-header__menu-item"><a href="#news" class="the-header__link">Новости</a></li>
@@ -153,7 +153,7 @@ onUnmounted(() => {
           <ul class="the-header__mobile-menu">
             <li><NuxtLink to="/projects" @click="toggleMenu" class="the-header__mobile-link">Проекты</NuxtLink></li>
             <li><NuxtLink to="/services" @click="toggleMenu" class="the-header__mobile-link the-header__mobile-link--active">Услуги</NuxtLink></li>
-            <li><a href="#about" @click="toggleMenu" class="the-header__mobile-link">О компании</a></li>
+            <li><NuxtLink to="/about" @click="toggleMenu" class="the-header__mobile-link">О компании</NuxtLink></li>
             <li><a href="#career" @click="toggleMenu" class="the-header__mobile-link">Карьера</a></li>
             <li><a href="#blog" @click="toggleMenu" class="the-header__mobile-link">Блог</a></li>
             <li><a href="#news" @click="toggleMenu" class="the-header__mobile-link">Новости</a></li>
