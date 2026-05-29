@@ -1,6 +1,5 @@
 <script setup lang="ts">
-  import type { ProjectCategoriesResponse } from '#types';
-  import type { ProjectsResponse,  ProjectItem } from '#types';
+  import type { ProjectCategoriesResponse, ProjectsResponse,  ProjectItem } from '#types';
 
 
   const { data: categoriesData } = await useProjectFetch<ProjectCategoriesResponse>('/project-categories');

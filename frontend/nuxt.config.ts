@@ -5,14 +5,8 @@ export default defineNuxtConfig({
   
   srcDir: 'app',
 
- // runtimeConfig: {
-  //   public: {
-  //     apiBase: 'http://localhost:8000/api' // Базовый URL для бэкенда
-  //   }
-  // },
-
   alias: {
-    '#types': '../app/model/types'
+    '#types': '../app/common/lib/types'
   },
 
   runtimeConfig: {
@@ -57,7 +51,7 @@ export default defineNuxtConfig({
 
   imports: {
     dirs: [
-      '~/utils' 
+      '~/common/lib/api' 
     ]
   },
 
