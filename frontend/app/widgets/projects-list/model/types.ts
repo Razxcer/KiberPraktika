@@ -1,3 +1,3 @@
-export interface SeeMoreProps{
-    title: string;
+export interface SeeMoreProps {
+  title: string;
 }

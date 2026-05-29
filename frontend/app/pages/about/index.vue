@@ -1,8 +1,8 @@
 <template>
-    <div class="about-page">
-      <AboutBlock/>
-      <SeeMoreProjects :title="'Ознакомьтесь с нашими проектами'" class="about-page__see-more" />
-    </div>
+  <div class="about-page">
+    <AboutBlock />
+    <SeeMoreProjects :title="'Ознакомьтесь с нашими проектами'" class="about-page__see-more" />
+  </div>
 </template>
 
 <style lang="scss" scoped>

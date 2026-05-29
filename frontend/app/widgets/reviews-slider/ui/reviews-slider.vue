@@ -19,14 +19,13 @@ const reviews = computed(() => data.value?.data.items || []);
 </script>
 
 <template>
-  <section class="reviews-slider" id="reviews">
+  <section id="reviews" class="reviews-slider">
     <div class="reviews-slider__container">
-      
       <h2 class="reviews-slider__main-title">Нам доверяют</h2>
 
       <div v-if="pending" class="reviews-slider__status">Загрузка отзывов...</div>
       <div v-else-if="error" class="reviews-slider__status">Не удалось загрузить отзывы</div>
-      
+
       <div v-else class="reviews-slider__wrapper">
         <Swiper
           :modules="modules"
@@ -35,15 +34,15 @@ const reviews = computed(() => data.value?.data.items || []);
           :loop="false"
           :navigation="{
             prevEl: prevButtonRef,
-            nextEl: nextButtonRef
+            nextEl: nextButtonRef,
           }"
           :pagination="{
             el: '.reviews-slider__dots',
-            clickable: true
+            clickable: true,
           }"
           :breakpoints="{
             768: { slidesPerView: 2 },
-            1200: { slidesPerView: 3 }
+            1200: { slidesPerView: 3 },
           }"
           class="reviews-slider__swiper"
         >
@@ -54,19 +53,26 @@ const reviews = computed(() => data.value?.data.items || []);
 
         <!-- БЛОК НАВИГАЦИИ (Стрелки + Точки снизу по центру) -->
         <div class="reviews-slider__controls">
-          <button ref="prevButtonRef" class="reviews-slider__arrow reviews-slider__arrow--prev" aria-label="Назад">
+          <button
+            ref="prevButtonRef"
+            class="reviews-slider__arrow reviews-slider__arrow--prev"
+            aria-label="Назад"
+          >
             ‹
           </button>
-          
+
           <!-- Контейнер для точек пагинации Swiper -->
           <div class="reviews-slider__dots"></div>
-          
-          <button ref="nextButtonRef" class="reviews-slider__arrow reviews-slider__arrow--next" aria-label="Вперед">
+
+          <button
+            ref="nextButtonRef"
+            class="reviews-slider__arrow reviews-slider__arrow--next"
+            aria-label="Вперед"
+          >
             ›
           </button>
         </div>
       </div>
-
     </div>
   </section>
 </template>
@@ -82,10 +88,10 @@ const reviews = computed(() => data.value?.data.items || []);
     margin: 0 auto;
     padding: 0 var(--base-padding-x);
 
-    @include tablet{
+    @include tablet {
       padding: 0 calc(var(--base-padding-x) / 2);
     }
-    @include mobile{
+    @include mobile {
       padding: 0 calc(var(--base-padding-x) / 4);
     }
   }
@@ -98,11 +104,14 @@ const reviews = computed(() => data.value?.data.items || []);
     color: var(--dark);
     margin: 0 0 48px 0;
 
-    @include mobile { font-size: 24px; margin-bottom: 24px; }
+    @include mobile {
+      font-size: 24px;
+      margin-bottom: 24px;
+    }
   }
 
   &__swiper {
-    padding-bottom: 20px; 
+    padding-bottom: 20px;
   }
 
   &__controls {
@@ -125,7 +134,9 @@ const reviews = computed(() => data.value?.data.items || []);
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: background-color 0.2s, color 0.2s;
+    transition:
+      background-color 0.2s,
+      color 0.2s;
 
     &:hover:not(.swiper-button-disabled) {
       background-color: var(--blue-button);
@@ -141,7 +152,7 @@ const reviews = computed(() => data.value?.data.items || []);
   &__dots {
     display: flex;
     gap: 8px;
-    width: auto !important; 
+    width: auto !important;
 
     .swiper-pagination-bullet {
       width: 8px;
@@ -154,7 +165,7 @@ const reviews = computed(() => data.value?.data.items || []);
       &-active {
         background-color: var(--blue-button);
         opacity: 1;
-        transform: scale(1.2); 
+        transform: scale(1.2);
       }
     }
   }

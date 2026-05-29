@@ -11,11 +11,7 @@ defineProps<{
     <!-- Левая колонка: круглая иконка-вывеска -->
     <div class="award-card__icon-zone">
       <div class="award-card__icon-wrapper">
-        <img 
-          :src="award.award_icon.original_url" 
-          :alt="award.title" 
-          class="award-card__icon-img"
-        />
+        <img :src="award.award_icon.original_url" :alt="award.title" class="award-card__icon-img" />
       </div>
     </div>
 
@@ -23,7 +19,7 @@ defineProps<{
     <div class="award-card__content">
       <h3 class="award-card__title">{{ award.title }}</h3>
       <p class="award-card__description text-h9">{{ award.description }}</p>
-      
+
       <!-- Ссылка на кейс/проект, если бэкенд его передал -->
       <div v-if="award.project" class="award-card__project-zone">
         <a :href="award.project.link" class="award-card__project-link text-h9" target="_blank">
@@ -93,17 +89,19 @@ defineProps<{
     gap: 4px;
     text-decoration: none;
 
-    background-image: linear-gradient(to right, 
-    var(--current-color) 40%, 
-    var(--purple-dark) 60%, 
-    var(--purple-light) 80%, 
-    var(--blue-dodger) 100%);
+    background-image: linear-gradient(
+      to right,
+      var(--current-color) 40%,
+      var(--purple-dark) 60%,
+      var(--purple-light) 80%,
+      var(--blue-dodger) 100%
+    );
 
     background-size: 250% 100%;
     background-position: left center;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    
+
     transition: background-position 0.2s ease-in-out;
 
     &:hover {

@@ -2,26 +2,21 @@
   <section class="the-hero">
     <!-- Синяя декоративная SVG-снежинка на заднем фоне -->
     <div class="the-hero__bg-snowflake" aria-hidden="true">
-      <img src="~assets/img/star.svg" alt="Снежинка"/>
+      <img src="~assets/img/star.svg" alt="Снежинка" />
     </div>
 
     <div class="the-hero__container">
       <!-- ЛЕВАЯ ЧАСТЬ: Контент и кнопки -->
       <div class="the-hero__content">
-        
         <!-- Заголовок -->
-        <h2 class="the-hero__title">
-          Разрабатываем сложные ИТ-продукты: 
-          e-ком, веб-cервисы, ИИ
-        </h2>
+        <h2 class="the-hero__title">Разрабатываем сложные ИТ-продукты: e-ком, веб-cервисы, ИИ</h2>
 
         <!-- Нижняя панель -->
         <div class="the-hero__actions">
-
           <!-- Блок управления (Кнопка + Соцсети) -->
           <div class="the-hero__socials">
-            <FeedBackButton/>
-            <MessIconsFilled/>
+            <FeedBackButton />
+            <MessIconsFilled />
           </div>
 
           <!-- Вывеска "30 место" -->
@@ -31,21 +26,17 @@
               <span class="the-hero__badge-text-low text-h10">место</span>
             </div>
             <p class="the-hero__badge-desc text-h10">
-              Разработка сайтов и<br/>веб-сервисов в среднем<br/>ценовом сегменте
+              Разработка сайтов и<br />веб-сервисов в среднем<br />ценовом сегменте
             </p>
           </div>
-          
         </div>
-
-        
-
       </div>
 
       <!-- ПРАВАЯ ЧАСТЬ: Фотография команды -->
       <div class="the-hero__image-box">
-        <img 
-          src="~assets/img/banner-pic-2.avif" 
-          alt="Команда разработки" 
+        <img
+          src="~assets/img/banner-pic-2.avif"
+          alt="Команда разработки"
           class="the-hero__team-photo"
         />
       </div>
@@ -56,17 +47,17 @@
 <style lang="scss" scoped>
 .the-hero {
   position: relative;
-  background-color: var(--blue-button); 
+  background-color: var(--blue-button);
   border-radius: 40px;
   margin: 20px var(--base-padding-x);
   overflow: hidden;
   color: var(--white);
 
-  @include tablet{
+  @include tablet {
     margin: 20px calc(var(--base-padding-x) / 2);
   }
 
-  @include mobile{
+  @include mobile {
     margin: 0px calc(var(--base-padding-x) / 4);
   }
 
@@ -80,7 +71,7 @@
     opacity: 0.6;
     pointer-events: none;
     z-index: 1;
-    
+
     svg {
       width: 100%;
       height: 100%;
@@ -104,7 +95,6 @@
       flex-direction: column;
       padding: 10px 15px;
     }
-    
   }
 
   // Левый блок контента
@@ -123,9 +113,15 @@
     line-height: 1.2;
     margin: 0 0 40px 0;
 
-    @include mobile { font-size: 22px; }
-    @include tablet { font-size: 40px; }
-    @include desktop { font-size: 54px; }
+    @include mobile {
+      font-size: 22px;
+    }
+    @include tablet {
+      font-size: 40px;
+    }
+    @include desktop {
+      font-size: 54px;
+    }
   }
 
   // Блок кнопок
@@ -149,7 +145,6 @@
     align-items: center;
     gap: 10px;
   }
-
 
   // Вывеска "30 место"
   &__badge {
@@ -215,7 +210,7 @@
     max-width: 100%;
     height: auto;
     object-fit: contain;
-    display: block; 
+    display: block;
     z-index: 2;
   }
 }

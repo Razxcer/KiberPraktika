@@ -9,11 +9,7 @@ defineProps<{
 <template>
   <article class="project-card">
     <NuxtLink :to="`/projects/${project.slug}`" class="project-card__image-wrapper">
-      <img 
-        :src="project.image.original_url" 
-        :alt="project.title" 
-        class="project-card__image"
-      />
+      <img :src="project.image.original_url" :alt="project.title" class="project-card__image" />
       <NuxtLink :to="`/projects/${project.slug}`" class="project-card__arrow">↗</NuxtLink>
     </NuxtLink>
     <h3 class="project-card__title">{{ project.title }}</h3>
@@ -86,6 +82,5 @@ defineProps<{
     line-height: 1.4;
     margin: 0;
   }
- 
 }
 </style>

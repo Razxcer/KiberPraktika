@@ -1,18 +1,20 @@
 // @ts-nocheck
 import withNuxt from './.nuxt/eslint.config.mjs'
-import prettier from 'eslint-plugin-prettier';
-import configPrettier from 'eslint-config-prettier';
+import prettierPlugin from 'eslint-plugin-prettier';
+import prettierConfig from 'eslint-config-prettier';
 
 export default withNuxt(
-    {
+  {
+    // Указываем файлы, которые линтер обязан проверять
+    files: ['**/*.ts', '**/*.vue', '**/*.js'],
     plugins: {
-      prettier,
+      prettier: prettierPlugin,
     },
     rules: {
       'prettier/prettier': 'error',
-      'vue/multi-word-component-names': 'off', // Важно для FSD
+      'vue/multi-word-component-names': 'off', 
       '@typescript-eslint/no-explicit-any': 'warn',
     },
   },
-  configPrettier
+  prettierConfig
 );

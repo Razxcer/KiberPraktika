@@ -10,7 +10,7 @@ const formatDate = (timestamp: number) => {
   return date.toLocaleDateString('ru-RU', {
     day: '2-digit',
     month: '2-digit',
-    year: 'numeric'
+    year: 'numeric',
   });
 };
 </script>
@@ -18,22 +18,36 @@ const formatDate = (timestamp: number) => {
 <template>
   <article class="news-card">
     <div class="news-card__image-wrapper">
-      <img 
-        :src="news.image_preview" 
-        :alt="news.title" 
-        class="news-card__img"
-      />
+      <img :src="news.image_preview" :alt="news.title" class="news-card__img" />
     </div>
 
     <div class="news-card__content">
       <h3 class="news-card__title">{{ news.title }}</h3>
-      
+
       <div class="news-card__description text-h8" v-html="news.description"></div>
-      
+
       <div class="news-card__date-box text-h10">
-        <svg class="news-card__calendar-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
-          <path d="M19 4H5C3.89543 4 3 4.89543 3 6V20C3 21.1046 3.89543 22 5 22H19C20.1046 22 21 21.1046 21 20V6C21 4.89543 20.1046 4 19 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M16 2V6M8 2V6M3 10H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <svg
+          class="news-card__calendar-icon"
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://w3.org"
+        >
+          <path
+            d="M19 4H5C3.89543 4 3 4.89543 3 6V20C3 21.1046 3.89543 22 5 22H19C20.1046 22 21 21.1046 21 20V6C21 4.89543 20.1046 4 19 4Z"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M16 2V6M8 2V6M3 10H21"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
         </svg>
         <span class="news-card__date-text">{{ formatDate(news.published_at) }}</span>
       </div>
@@ -88,7 +102,7 @@ const formatDate = (timestamp: number) => {
     color: var(--gray-dark);
     line-height: 1.5;
     margin: 0 0 20px 0;
-    
+
     p {
       margin: 0;
       padding: 0;

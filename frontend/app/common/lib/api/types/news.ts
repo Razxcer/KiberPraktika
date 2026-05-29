@@ -16,12 +16,12 @@ export interface NewsItem {
   title: string;
   description: string;
   slug: string;
-  image_preview: string; 
+  image_preview: string;
   is_popular: number;
   is_news: number;
   published_at: number;
-  authors: NewsAuthor[]; 
-  tags: NewsTag[];       
+  authors: NewsAuthor[];
+  tags: NewsTag[];
 }
 
 export interface NewsResponse {

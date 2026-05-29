@@ -3,9 +3,9 @@
     <TheHero />
     <BrandsTicker />
     <AwardsBlock />
-    <ProjectsList/>
-    <NewsBlock/>
-    <ReviewsSlider/>
+    <ProjectsList />
+    <NewsBlock />
+    <ReviewsSlider />
   </main>
 </template>
 

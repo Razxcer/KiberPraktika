@@ -1,11 +1,11 @@
 <template>
   <div class="layout-default">
     <TheHeader />
-    
+
     <div class="layout-default__content">
       <slot />
     </div>
-    <TheHeroLight/>
+    <TheHeroLight />
     <TheFooter />
   </div>
 </template>

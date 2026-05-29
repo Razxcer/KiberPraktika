@@ -1,6 +1,6 @@
 <template>
   <div class="services-page">
-    <ServicesBlock/>
+    <ServicesBlock />
   </div>
 </template>
 
