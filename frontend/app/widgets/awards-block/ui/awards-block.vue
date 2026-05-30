@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { AwardsResponse } from '#types';
+import type { AwardsResponse } from '~/entities/award/model/types';
 
 const { data, error, pending } = await useProjectFetch<AwardsResponse>('/awards');
 const awardsList = computed(() => data.value?.data.awards || []);

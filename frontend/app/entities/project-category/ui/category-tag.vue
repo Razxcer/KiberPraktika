@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ProjectCategoryItem } from '#types';
+import type { ProjectCategoryItem } from '../model/types';
 
 defineProps<{
   category: ProjectCategoryItem;

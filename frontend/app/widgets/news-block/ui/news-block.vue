@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { NewsResponse, NewsItem } from '#types';
+import type { NewsResponse, NewsItem } from '~/entities/news/model/types';
 
 const config = useRuntimeConfig();
 

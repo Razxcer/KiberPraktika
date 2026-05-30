@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { SeeMoreProps } from '../model/types';
-import type { ProjectsResponse, ProjectItem } from '#types';
+import type { ProjectsResponse, ProjectItem } from '~/entities/project/model/types';
 
 const props = withDefaults(defineProps<SeeMoreProps>(), {
   title: 'Ознакомьтесь с нашими проектами',
@@ -28,9 +28,7 @@ const loadProjects = async () => {
   }
 };
 
-onMounted(() => {
-  loadProjects();
-});
+loadProjects();
 </script>
 
 <template>

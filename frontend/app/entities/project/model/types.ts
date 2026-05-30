@@ -1,4 +1,4 @@
-import type { AwardItem } from './awards.ts';
+import type { AwardItem } from '~/entities/award/model/types';
 export interface ProjectImage {
   uuid: string;
   mime_type: string;
@@ -32,16 +32,6 @@ export interface ProjectsResponse {
     };
     items: ProjectItem[];
   };
-}
-
-export interface ProjectCategoryItem {
-  id: number;
-  name: string;
-}
-
-export interface ProjectCategoriesResponse {
-  message: string;
-  data: ProjectCategoryItem[];
 }
 
 export interface ProjectContent {

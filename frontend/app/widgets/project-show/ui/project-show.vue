@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { ProjectResponseShow } from '#types';
+import type { ProjectResponseShow } from '~/entities/project/model/types';
 
 const route = useRoute();
 const router = useRouter();
@@ -10,7 +10,11 @@ const { data, pending, error } = useProjectFetch<ProjectResponseShow>(`/projects
 const project = computed(() => data.value?.data.project);
 
 const goBack = () => {
-  router.back();
+  if (typeof window !== 'undefined' && window.history.length <= 1) {
+    router.push('/');
+  } else {
+    router.back();
+  }
 };
 </script>
 
@@ -18,7 +22,7 @@ const goBack = () => {
   <div class="project">
     <p v-if="pending" class="project__status">Подождите...</p>
     <p v-else-if="error" class="project__status project__status--error">Произошла ошибка</p>
-    <div v-else class="project__container">
+    <div v-else-if="project" class="project__container">
       <div class="project__back-container">
         <button class="project__go-back" @click="goBack">< Назад</button>
       </div>
@@ -33,7 +37,7 @@ const goBack = () => {
           <img
             v-else-if="content.type == 'image'"
             class="project__image"
-            :src="content.data.image"
+            :src="content.data.content"
           />
         </div>
       </div>

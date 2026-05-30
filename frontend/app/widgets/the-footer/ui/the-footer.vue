@@ -1,3 +1,7 @@
+<script setup lang="ts">
+  const currentYear = new Date().getFullYear();
+</script>
+
 <template>
   <footer class="the-footer">
     <div class="the-footer__container">
@@ -108,7 +112,7 @@
       <!-- СЕКЦИЯ 2 -->
       <div class="the-footer__section the-footer__section--bot">
         <p class="the-footer__copyright text-h10">
-          © 2026 ООО «Киберия», номер в реестре аккредитованных ИТ-компаний: 53278
+          © {{ currentYear }} ООО «Киберия», номер в реестре аккредитованных ИТ-компаний: 53278
         </p>
 
         <div class="the-footer__docs">

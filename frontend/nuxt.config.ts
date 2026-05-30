@@ -4,11 +4,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   srcDir: 'app',
-
-  alias: {
-    '#types': '../app/common/lib/api/types/index',
-  },
-
+  
   runtimeConfig: {
     public: {
       apiBase: '/api',
