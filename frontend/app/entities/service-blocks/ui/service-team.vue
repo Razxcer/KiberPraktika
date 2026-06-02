@@ -91,8 +91,12 @@
   padding: 40px 0;
   background-image:
     url('~/assets/img/background-gradient-short.png'),
-    linear-gradient(to right, var(--gradient-tz-1), var(--gradient-tz-3), var(--gradient-tz-2));
-  background-repeat: repeat;
+    url('~/assets/img/background-large.png');
+  background-repeat: repeat, no-repeat;
+  background-size: auto, 100% 100%;
+  background-position: top left, center center;
+  
+    background-blend-mode: soft-light;
 
   &__container {
     max-width: 1440px;

@@ -17,7 +17,11 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ['@nuxt/eslint'],
+  modules: [
+    '@nuxt/eslint',
+    'nuxt-swiper',
+  ],
+
 
   css: ['~/assets/styles/main.scss'],
 

@@ -9,8 +9,9 @@
 .about-page {
   padding-top: 90px;
 
-  // &__see-more{
-  //   margin-top: -40px;
-  // }
+  &__see-more{
+    margin-top: -40px;
+    margin-bottom: 40px;
+  }
 }
 </style>

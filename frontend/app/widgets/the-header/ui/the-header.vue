@@ -136,7 +136,7 @@ onUnmounted(() => {
             <NuxtLink to="/about" class="the-header__link">О компании</NuxtLink>
           </li>
           <li class="the-header__menu-item">
-            <a href="#career" class="the-header__link">Карьера</a>
+            <NuxtLink to="/career" class="the-header__link">Карьера</NuxtLink>
           </li>
           <li class="the-header__menu-item"><a href="#blog" class="the-header__link">Блог</a></li>
           <li class="the-header__menu-item">
@@ -281,7 +281,7 @@ onUnmounted(() => {
               >
             </li>
             <li>
-              <a href="#career" class="the-header__mobile-link" @click="toggleMenu">Карьера</a>
+              <NuxtLink to="/career" class="the-header__mobile-link" @click="toggleMenu">Карьера</NuxtLink>
             </li>
             <li><a href="#blog" class="the-header__mobile-link" @click="toggleMenu">Блог</a></li>
             <li><a href="#news" class="the-header__mobile-link" @click="toggleMenu">Новости</a></li>
@@ -381,8 +381,8 @@ onUnmounted(() => {
 
     background-size: 250% 100%;
     background-position: left center;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
 
     transition: background-position 0.1s ease;
 
@@ -390,7 +390,7 @@ onUnmounted(() => {
       background-position: right center;
     }
 
-    &--active {
+    &.router-link-active {
       background-position: right center;
     }
   }
@@ -536,9 +536,30 @@ onUnmounted(() => {
     font-size: 20px;
     font-weight: 600;
     display: block;
+    color: inherit;
+    text-decoration: none;
 
-    &--active {
-      color: var(--blue); // Выделенная синяя ссылка "Услуги" из вашего макета
+    background-image: linear-gradient(
+      to right,
+      var(--current-color) 40%,
+      var(--purple-dark) 60%,
+      var(--purple-light) 80%,
+      var(--blue-dodger) 100%
+    );
+
+    background-size: 500% 100%;
+    background-position: left center;
+    background-clip: text;
+    color: transparent;
+
+    transition: background-position 0.1s ease;
+
+    &:hover {
+      background-position: right center;
+    }
+
+    &.router-link-active {
+      background-position: right center;
     }
   }
 

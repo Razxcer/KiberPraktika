@@ -11,7 +11,6 @@
 <style lang="scss" scoped>
 .about {
   width: 100%;
-  padding: 50px 0;
 
   &__title {
     font-size: 48px;
