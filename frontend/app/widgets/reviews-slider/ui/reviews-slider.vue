@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Navigation, Pagination } from 'swiper/modules';
 import type { ReviewsResponse } from '~/entities/review/model/types';
 

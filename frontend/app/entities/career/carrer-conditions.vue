@@ -1,24 +1,28 @@
 <template>
   <div class="service__categoris-block">
     <div class="service__container">
-      <p class="service__title service__categories-title">Мы растём и ищем того, кто будет развиваться с нами</p>
+      <p class="service__title service__categories-title">
+        Мы растём и ищем того, кто будет развиваться с нами
+      </p>
       <div class="service__grid service__categories-grid">
         <div class="service__categories-element">
           <p class="service__categories-element-title">Крутая команда</p>
           <p class="service__categories-element-text">
-            Большая команда специалистов своего дела, где каждый готов помочь тебе в реализации твоих задач и идей
+            Большая команда специалистов своего дела, где каждый готов помочь тебе в реализации
+            твоих задач и идей
           </p>
         </div>
         <div class="service__categories-element">
           <p class="service__categories-element-title">Профессиональное развитие</p>
           <p class="service__categories-element-text">
-           Возможность вертикального и горизонтального карьерного роста и частичная компенсация обучения
+            Возможность вертикального и горизонтального карьерного роста и частичная компенсация
+            обучения
           </p>
         </div>
         <div class="service__categories-element">
           <p class="service__categories-element-title">Комфортный офис</p>
           <p class="service__categories-element-text">
-           Новый большой офис с кухней, зоной отдыха и Playstation
+            Новый большой офис с кухней, зоной отдыха и Playstation
           </p>
         </div>
         <div class="service__categories-element">
@@ -30,13 +34,15 @@
         <div class="service__categories-element">
           <p class="service__categories-element-title">Зарплатный рост</p>
           <p class="service__categories-element-text">
-            Стабильная и конкурентноспособная заработная плата, растущая в соответствии с твоим карьерным треком
+            Стабильная и конкурентноспособная заработная плата, растущая в соответствии с твоим
+            карьерным треком
           </p>
         </div>
         <div class="service__categories-element">
           <p class="service__categories-element-title">Хорошая техника</p>
           <p class="service__categories-element-text">
-            Рабочие места оборудованы новой техникой (PC, Mac), эргономичными креслами, двумя 2К-мониторами и механикой
+            Рабочие места оборудованы новой техникой (PC, Mac), эргономичными креслами, двумя
+            2К-мониторами и механикой
           </p>
         </div>
         <div class="service__categories-element">
@@ -101,7 +107,6 @@
       width: 90%;
     }
   }
-
 
   &__grid {
     display: grid;

@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   srcDir: 'app',
-  
+
   runtimeConfig: {
     public: {
       apiBase: '/api',
@@ -17,11 +17,11 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: [
-    '@nuxt/eslint',
-    'nuxt-swiper',
-  ],
+  modules: ['@nuxt/eslint', 'nuxt-swiper', 'vue-yandex-maps/nuxt'],
 
+  yandexMaps: {
+    apikey: 'd40d88ee-9f3a-4027-9631-7074e4fc08da', // Получите бесплатный JavaScript API ключ Яндекса
+  },
 
   css: ['~/assets/styles/main.scss'],
 

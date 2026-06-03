@@ -4,13 +4,13 @@
       <div class="stages__title">Кого мы ищем?</div>
       <div class="stages__grid">
         <div class="stages__item">
-          <IconBackendCard class="stages__img"/>
+          <IconBackendCard class="stages__img" />
         </div>
         <div class="stages__item">
-          <IconFrontendCard class="stages__img"/>
+          <IconFrontendCard class="stages__img" />
         </div>
         <div class="stages__item">
-          <IconUxUiDesigner class="stages__img"/>
+          <IconUxUiDesigner class="stages__img" />
         </div>
       </div>
       <a class="stages__button">Все вакансии на hh.ru</a>
@@ -68,19 +68,19 @@
     width: 100%;
   }
 
-  &__button{
-        margin: 0 auto;
-        font-size: 18px;
-        font-weight: 500;
-        color: var(--white);
-        background-color: var(--blue);
-        padding: 10px 30px;
-        border: none;
-        border-radius: 2em;
+  &__button {
+    margin: 0 auto;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--white);
+    background-color: var(--blue);
+    padding: 10px 30px;
+    border: none;
+    border-radius: 2em;
 
-        @include mobile {
-            font-size: 14px;
-        }
+    @include mobile {
+      font-size: 14px;
     }
+  }
 }
 </style>

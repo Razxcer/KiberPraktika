@@ -17,8 +17,8 @@
           <img class="stages__img" src="~/assets/img/icons/stages2.png" />
           <div class="stages__name">Гибкая разработка</div>
           <div class="stages__disc">
-            Благодаря многолетнему опыту мы гибко используем современные методологии разработки
-            – Scrum, Agile, Lean, Kanban, применяя и адаптируя их под нужды проекта
+            Благодаря многолетнему опыту мы гибко используем современные методологии разработки –
+            Scrum, Agile, Lean, Kanban, применяя и адаптируя их под нужды проекта
           </div>
         </div>
         <div class="stages__item">

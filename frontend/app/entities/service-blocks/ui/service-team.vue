@@ -90,13 +90,16 @@
   border-radius: 0.7em 0.7em 0 0;
   padding: 40px 0;
   background-image:
-    url('~/assets/img/background-gradient-short.png'),
-    url('~/assets/img/background-large.png');
+    url('~/assets/img/background-gradient-short.png'), url('~/assets/img/background-large.png');
   background-repeat: repeat, no-repeat;
-  background-size: auto, 100% 100%;
-  background-position: top left, center center;
-  
-    background-blend-mode: soft-light;
+  background-size:
+    auto,
+    100% 100%;
+  background-position:
+    top left,
+    center center;
+
+  background-blend-mode: soft-light;
 
   &__container {
     max-width: 1440px;

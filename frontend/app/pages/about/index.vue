@@ -9,7 +9,7 @@
 .about-page {
   padding-top: 90px;
 
-  &__see-more{
+  &__see-more {
     margin-top: -40px;
     margin-bottom: 40px;
   }

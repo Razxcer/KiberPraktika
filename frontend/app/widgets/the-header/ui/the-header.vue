@@ -281,7 +281,9 @@ onUnmounted(() => {
               >
             </li>
             <li>
-              <NuxtLink to="/career" class="the-header__mobile-link" @click="toggleMenu">Карьера</NuxtLink>
+              <NuxtLink to="/career" class="the-header__mobile-link" @click="toggleMenu"
+                >Карьера</NuxtLink
+              >
             </li>
             <li><a href="#blog" class="the-header__mobile-link" @click="toggleMenu">Блог</a></li>
             <li><a href="#news" class="the-header__mobile-link" @click="toggleMenu">Новости</a></li>

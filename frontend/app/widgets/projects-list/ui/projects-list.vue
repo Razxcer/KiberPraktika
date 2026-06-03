@@ -2,7 +2,8 @@
 import type { ProjectsResponse, ProjectItem } from '~/entities/project/model/types';
 import type { ProjectCategoriesResponse } from '~/entities/project-category/model/types';
 
-const { data: categoriesData } = await useProjectFetch<ProjectCategoriesResponse>('/project-categories');
+const { data: categoriesData } =
+  await useProjectFetch<ProjectCategoriesResponse>('/project-categories');
 const categories = computed(() => categoriesData.value?.data || []);
 const activeCategoryId = ref<number | null>(null);
 
@@ -23,7 +24,7 @@ const loadProjects = async (append = false) => {
       queryParams.project_category_id = activeCategoryId.value;
     }
 
-    const response =  await useProjectFetch<ProjectsResponse>('/projects', {
+    const response = await useProjectFetch<ProjectsResponse>('/projects', {
       baseURL: config.public.apiBase,
       query: queryParams,
     });

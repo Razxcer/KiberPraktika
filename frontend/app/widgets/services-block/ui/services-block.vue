@@ -25,11 +25,14 @@
     font-weight: 600;
     text-align: center;
     background-image:
-      url('~/assets/img/background-gradient-short.png'),
-      url('~/assets/img/background-small.png');
+      url('~/assets/img/background-gradient-short.png'), url('~/assets/img/background-small.png');
     background-repeat: repeat, no-repeat;
-    background-size: auto, 100% 120%;
-    background-position: top left, bottom center;
+    background-size:
+      auto,
+      100% 120%;
+    background-position:
+      top left,
+      bottom center;
     background-blend-mode: soft-light;
 
     @include mobile {
