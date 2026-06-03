@@ -25,49 +25,49 @@ const modules = [Autoplay];
       >
         <SwiperSlide class="brands-ticker__slide" style="animation-delay: 0s">
           <div class="brands-ticker__item">
-            <IconGazpromNeft/>
+            <IconGazpromNeft />
           </div>
         </SwiperSlide>
 
         <SwiperSlide class="brands-ticker__slide" style="animation-delay: 0.4s">
           <div class="brands-ticker__item">
-            <IconManna/>
+            <IconManna />
           </div>
         </SwiperSlide>
 
         <SwiperSlide class="brands-ticker__slide" style="animation-delay: 0.8s">
           <div class="brands-ticker__item">
-            <IconItKit/>
+            <IconItKit />
           </div>
         </SwiperSlide>
 
         <SwiperSlide class="brands-ticker__slide" style="animation-delay: 1.2s">
           <div class="brands-ticker__item">
-            <IconComfortel/>
+            <IconComfortel />
           </div>
         </SwiperSlide>
 
         <SwiperSlide class="brands-ticker__slide" style="animation-delay: 1.6s">
           <div class="brands-ticker__item">
-            <IconIntegraSources/>
+            <IconIntegraSources />
           </div>
         </SwiperSlide>
 
         <SwiperSlide class="brands-ticker__slide" style="animation-delay: 2s">
           <div class="brands-ticker__item">
-            <IconDveridoff/>
+            <IconDveridoff />
           </div>
         </SwiperSlide>
 
         <SwiperSlide class="brands-ticker__slide" style="animation-delay: 2.4s">
           <div class="brands-ticker__item">
-            <IconSmart/>
+            <IconSmart />
           </div>
         </SwiperSlide>
 
         <SwiperSlide class="brands-ticker__slide" style="animation-delay: 2.8s">
           <div class="brands-ticker__item">
-            <IconForkagro/>
+            <IconForkagro />
           </div>
         </SwiperSlide>
       </Swiper>
@@ -82,7 +82,7 @@ const modules = [Autoplay];
   }
   50% {
     transform: translateY(-7px);
-  } 
+  }
   100% {
     transform: translateY(0);
   }

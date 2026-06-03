@@ -41,6 +41,10 @@
     @include mobile {
       width: 90%;
     }
+
+    @include tablet {
+      width: 90%;
+    }
   }
 
   &__title {

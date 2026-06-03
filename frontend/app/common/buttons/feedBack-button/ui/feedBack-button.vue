@@ -1,9 +1,9 @@
 <template>
-    <OrbitAnimationLarge>
-      <div class="large-button">
-        <span class="large-button__content"> Обсудить проект </span>
-      </div>
-    </OrbitAnimationLarge>
+  <OrbitAnimationLarge>
+    <div class="large-button">
+      <span class="large-button__content"> Обсудить проект </span>
+    </div>
+  </OrbitAnimationLarge>
 </template>
 
 <style lang="scss" scoped>
