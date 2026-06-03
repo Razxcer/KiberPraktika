@@ -1,11 +1,9 @@
 <template>
-  <a href="#" rel="nofollow" aria-label="Перейти в Telegram">
     <OrbitAnimationLarge>
       <div class="large-button">
         <span class="large-button__content"> Загрузить ещё </span>
       </div>
     </OrbitAnimationLarge>
-  </a>
 </template>
 
 <style lang="scss" scoped>
