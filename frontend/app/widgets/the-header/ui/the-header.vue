@@ -29,7 +29,7 @@ onUnmounted(() => {
   <header :class="['the-header', { 'the-header--scrolled': isScrolled }]">
     <div class="the-header__container">
       <!-- Логотип -->
-      <a href="/" class="the-header__logo" aria-label="Киберия">
+      <NuxtLink to="/" class="the-header__logo" aria-label="Киберия">
         <span class="the-header__logo-wrapper">
           <svg
             width="174"
@@ -111,7 +111,7 @@ onUnmounted(() => {
             ></path>
           </svg>
         </span>
-      </a>
+      </NuxtLink>
 
       <!-- Меню навигации -->
       <nav class="the-header__nav">

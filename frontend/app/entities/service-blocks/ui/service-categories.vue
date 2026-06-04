@@ -157,6 +157,11 @@
     display: flex;
     justify-content: space-between;
     gap: 20px;
+
+    @include mobile {
+      flex-direction: column;
+      gap: 0;
+    }
   }
 
   &__categories-element-title {
@@ -168,6 +173,7 @@
 
     @include mobile {
       font-size: 12px;
+      padding-left: 0;
     }
   }
 
@@ -179,7 +185,8 @@
 
     @include mobile {
       font-size: 14px;
-      flex: 0.55;
+      flex: 0.6;
+      width: 100%;
     }
   }
 }

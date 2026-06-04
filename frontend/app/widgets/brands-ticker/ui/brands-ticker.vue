@@ -70,6 +70,104 @@ const modules = [Autoplay];
             <IconForkagro />
           </div>
         </SwiperSlide>
+
+        <!-- Дубли -->
+
+        <SwiperSlide class="brands-ticker__slide" style="animation-delay: 0s">
+          <div class="brands-ticker__item">
+            <IconGazpromNeft />
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide class="brands-ticker__slide" style="animation-delay: 0.4s">
+          <div class="brands-ticker__item">
+            <IconManna />
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide class="brands-ticker__slide" style="animation-delay: 0.8s">
+          <div class="brands-ticker__item">
+            <IconItKit />
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide class="brands-ticker__slide" style="animation-delay: 1.2s">
+          <div class="brands-ticker__item">
+            <IconComfortel />
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide class="brands-ticker__slide" style="animation-delay: 1.6s">
+          <div class="brands-ticker__item">
+            <IconIntegraSources />
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide class="brands-ticker__slide" style="animation-delay: 2s">
+          <div class="brands-ticker__item">
+            <IconDveridoff />
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide class="brands-ticker__slide" style="animation-delay: 2.4s">
+          <div class="brands-ticker__item">
+            <IconSmart />
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide class="brands-ticker__slide" style="animation-delay: 2.8s">
+          <div class="brands-ticker__item">
+            <IconForkagro />
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide class="brands-ticker__slide" style="animation-delay: 0s">
+          <div class="brands-ticker__item">
+            <IconGazpromNeft />
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide class="brands-ticker__slide" style="animation-delay: 0.4s">
+          <div class="brands-ticker__item">
+            <IconManna />
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide class="brands-ticker__slide" style="animation-delay: 0.8s">
+          <div class="brands-ticker__item">
+            <IconItKit />
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide class="brands-ticker__slide" style="animation-delay: 1.2s">
+          <div class="brands-ticker__item">
+            <IconComfortel />
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide class="brands-ticker__slide" style="animation-delay: 1.6s">
+          <div class="brands-ticker__item">
+            <IconIntegraSources />
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide class="brands-ticker__slide" style="animation-delay: 2s">
+          <div class="brands-ticker__item">
+            <IconDveridoff />
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide class="brands-ticker__slide" style="animation-delay: 2.4s">
+          <div class="brands-ticker__item">
+            <IconSmart />
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide class="brands-ticker__slide" style="animation-delay: 2.8s">
+          <div class="brands-ticker__item">
+            <IconForkagro />
+          </div>
+        </SwiperSlide>
       </Swiper>
     </div>
   </section>

@@ -68,7 +68,7 @@
   &__title {
     width: 100%;
     font-family: $font-title;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 3em;
     text-align: center;
     padding-bottom: 1em;
@@ -80,9 +80,9 @@
 
   &__grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 25%);
     gap: 2em;
-    row-gap: 5em;
+    row-gap: 10em;
 
     @include mobile {
       grid-template-columns: 1fr 1fr;
@@ -106,18 +106,45 @@
   &__svg {
     max-width: 100%;
     max-height: 100%;
-    height: 50%;
     width: auto;
   }
 
+  @include desktop {
+    &__element:hover &__desc {
+      display: block;
+      translate: 30% -150% 0;
+    }
+  }
+
   &__desc {
-    display: none;
+    @include desktop {
+      display: none;
+      position: absolute;
+      max-width: 15%;
+      max-height: 50%;
+      background-color: var(--dark);
+      border-radius: 1em;
+      padding: 10px;
+      color: var(--white);
+    }
 
     @include mobile {
       display: block;
       font-size: 12px;
       height: 50%;
       text-align: center;
+    }
+  }
+
+  @include desktop {
+    &__desc::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 30px;
+      border-width: 10px 10px 0 10px;
+      border-style: solid;
+      border-color: var(--dark) transparent transparent transparent;
     }
   }
 }
