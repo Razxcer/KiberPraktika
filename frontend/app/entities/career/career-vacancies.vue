@@ -13,7 +13,7 @@
           <IconUxUiDesigner class="stages__img" />
         </div>
       </div>
-      <a class="stages__button">Все вакансии на hh.ru</a>
+      <a class="stages__button" href="https://barnaul.hh.ru/employer/5990391?hhtmFrom=vacancy_search_list">Все вакансии на hh.ru</a>
     </div>
   </div>
 </template>

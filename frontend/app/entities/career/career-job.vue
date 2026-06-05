@@ -6,7 +6,7 @@
         Работая в нашей команде, каждый день ты будешь делать и узнавать что-то новое и интересное.
         Крутые знакомства, долгосрочные проекты и необычные задачи – то, что ждет тебя в Киберии
       </p>
-      <a class="job__button">Вакансии на hh.ru</a>
+      <a class="job__button" href="https://barnaul.hh.ru/employer/5990391?hhtmFrom=vacancy_search_list">Вакансии на hh.ru</a>
     </section>
   </div>
 </template>
