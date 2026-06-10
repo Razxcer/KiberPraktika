@@ -136,12 +136,12 @@ onUnmounted(() => {
           <li class="the-header__menu-item">
             <NuxtLink to="/career" class="the-header__link">Карьера</NuxtLink>
           </li>
-          <li class="the-header__menu-item"><a href="#blog" class="the-header__link">Блог</a></li>
+          <li class="the-header__menu-item"><NuxtLink to="/blog" class="the-header__link">Блог</NuxtLink></li>
           <li class="the-header__menu-item">
             <NuxtLink to="/news" class="the-header__link">Новости</NuxtLink>
           </li>
           <li class="the-header__menu-item">
-            <a href="#contacts" class="the-header__link">Контакты</a>
+            <NuxtLink to="/contacts" class="the-header__link">Контакты</NuxtLink>
           </li>
         </ul>
       </nav>
@@ -283,10 +283,10 @@ onUnmounted(() => {
                 >Карьера</NuxtLink
               >
             </li>
-            <li><a href="#blog" class="the-header__mobile-link" @click="toggleMenu">Блог</a></li>
+            <li><NuxtLink to="/blog" class="the-header__mobile-link" @click="toggleMenu">Блог</NuxtLink></li>
             <li><NuxtLink to="/career" class="the-header__mobile-link" @click="toggleMenu">Новости</NuxtLink></li>
             <li>
-              <a href="#contacts" class="the-header__mobile-link" @click="toggleMenu">Контакты</a>
+              <NuxtLink to="/contacts" class="the-header__mobile-link" @click="toggleMenu">Контакты</NuxtLink>
             </li>
           </ul>
         </nav>

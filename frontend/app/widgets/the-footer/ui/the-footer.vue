@@ -91,13 +91,13 @@ const currentYear = new Date().getFullYear();
 
         <nav class="the-footer__nav">
           <ul class="the-footer__menu">
-            <li><a href="#projects" class="the-footer__link text-h10">Проекты</a></li>
-            <li><a href="#services" class="the-footer__link text-h10">Услуги</a></li>
-            <li><a href="#about" class="the-footer__link text-h10">О компании</a></li>
-            <li><a href="#career" class="the-footer__link text-h10">Карьера</a></li>
-            <li><a href="#blog" class="the-footer__link text-h10">Блог</a></li>
-            <li><a href="#news" class="the-footer__link text-h10">Новости</a></li>
-            <li><a href="#contacts" class="the-footer__link text-h10">Контакты</a></li>
+            <li><NuxtLink to="/projects" class="the-footer__link text-h10">Проекты</NuxtLink></li>
+            <li><NuxtLink to="/services" class="the-footer__link text-h10">Услуги</NuxtLink></li>
+            <li><NuxtLink to="/about" class="the-footer__link text-h10">О компании</NuxtLink></li>
+            <li><NuxtLink to="/career" class="the-footer__link text-h10">Карьера</NuxtLink></li>
+            <li><NuxtLink to="/blog" class="the-footer__link text-h10">Блог</NuxtLink></li>
+            <li><NuxtLink to="/news" class="the-footer__link text-h10">Новости</NuxtLink></li>
+            <li><NuxtLink to="/contacts" class="the-footer__link text-h10">Контакты</NuxtLink></li>
           </ul>
         </nav>
 

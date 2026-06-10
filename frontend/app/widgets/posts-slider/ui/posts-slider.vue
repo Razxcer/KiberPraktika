@@ -53,8 +53,6 @@ const swiper = useSwiper(containerRef)
 
                 </swiper-container>
             </ClientOnly>
-            <button @click="swiper.prev()">Prev</button>
-            <button @click="swiper.next()">Next</button>
         </div>
     </section>
 </template>

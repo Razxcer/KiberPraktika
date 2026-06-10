@@ -93,6 +93,7 @@ const date = new Date(props.post.published_at * 1000).toLocaleDateString('ru-RU'
         
         &__img{
             width: 100%;
+            height: 100%;
             object-fit: cover;
             object-position: center center;
         }
