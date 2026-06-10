@@ -120,7 +120,6 @@ onUnmounted(() => {
             <NuxtLink
               to="/projects"
               class="the-header__link"
-              :class="{ 'the-header__link--active': currentLink == 'project' }"
               >Проекты</NuxtLink
             >
           </li>
@@ -128,7 +127,6 @@ onUnmounted(() => {
             <NuxtLink
               to="/services"
               class="the-header__link"
-              :class="{ 'the-header__link--active': currentLink == 'service' }"
               >Услуги</NuxtLink
             >
           </li>
@@ -140,7 +138,7 @@ onUnmounted(() => {
           </li>
           <li class="the-header__menu-item"><a href="#blog" class="the-header__link">Блог</a></li>
           <li class="the-header__menu-item">
-            <a href="#news" class="the-header__link">Новости</a>
+            <NuxtLink to="/news" class="the-header__link">Новости</NuxtLink>
           </li>
           <li class="the-header__menu-item">
             <a href="#contacts" class="the-header__link">Контакты</a>
@@ -286,7 +284,7 @@ onUnmounted(() => {
               >
             </li>
             <li><a href="#blog" class="the-header__mobile-link" @click="toggleMenu">Блог</a></li>
-            <li><a href="#news" class="the-header__mobile-link" @click="toggleMenu">Новости</a></li>
+            <li><NuxtLink to="/career" class="the-header__mobile-link" @click="toggleMenu">Новости</NuxtLink></li>
             <li>
               <a href="#contacts" class="the-header__mobile-link" @click="toggleMenu">Контакты</a>
             </li>

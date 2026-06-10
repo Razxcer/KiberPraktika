@@ -17,10 +17,10 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ['@nuxt/eslint', 'nuxt-swiper', 'vue-yandex-maps/nuxt'],
+  modules: ['@nuxt/eslint', 'nuxt-swiper', 'vue-yandex-maps/nuxt', '@nuxt/image'],
 
   yandexMaps: {
-    apikey: 'd40d88ee-9f3a-4027-9631-7074e4fc08da', // Получите бесплатный JavaScript API ключ Яндекса
+    apikey: 'd40d88ee-9f3a-4027-9631-7074e4fc08da',
   },
 
   css: ['~/assets/styles/main.scss'],
@@ -61,6 +61,12 @@ export default defineNuxtConfig({
   },
 
   vite: {
+    optimizeDeps: {
+      include: [
+        'swiper/modules',
+        'swiper/vue'
+      ]
+    },
     css: {
       preprocessorOptions: {
         scss: {

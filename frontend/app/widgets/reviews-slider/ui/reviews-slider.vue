@@ -2,10 +2,6 @@
 import { Navigation, Pagination } from 'swiper/modules';
 import type { ReviewsResponse } from '~/entities/review/model/types';
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-
 const modules = [Navigation, Pagination];
 
 // Кастомные ссылки для навигации Swiper
@@ -26,7 +22,9 @@ const reviews = computed(() => data.value?.data.items || []);
       <div v-else-if="error" class="reviews-slider__status">Не удалось загрузить отзывы</div>
 
       <div v-else class="reviews-slider__wrapper">
-        <Swiper
+
+      <ClientOnly>
+        <swiper-container
           :modules="modules"
           :slides-per-view="1"
           :space-between="24"
@@ -45,10 +43,11 @@ const reviews = computed(() => data.value?.data.items || []);
           }"
           class="reviews-slider__swiper"
         >
-          <SwiperSlide v-for="item in reviews" :key="item.id">
+          <swiper-slide v-for="item in reviews" :key="item.id">
             <ReviewCard :review="item" />
-          </SwiperSlide>
-        </Swiper>
+          </swiper-slide>
+        </swiper-container>
+        </ClientOnly>
 
         <!-- БЛОК НАВИГАЦИИ (Стрелки + Точки снизу по центру) -->
         <div class="reviews-slider__controls">
@@ -160,6 +159,7 @@ const reviews = computed(() => data.value?.data.items || []);
       opacity: 0.5;
       margin: 0 !important;
       transition: all 0.3s ease;
+      border-radius: 1.5em;
 
       &-active {
         background-color: var(--blue-button);
