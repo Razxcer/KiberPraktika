@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import type { PostSlideProps } from '../model/types';
+import type { BlogCardProps } from '../model/types';
 
-const props = defineProps<PostSlideProps>();
+const props = defineProps<BlogCardProps>();
 
 // Автор(ы)
 const authorText = ref('');
-if (props.post.authors.length < 1) {
+if (props.blogItem.authors.length < 1) {
   authorText.value = 'Автор: не указан';
-} else if ((props.post.authors.length = 1)) {
-  authorText.value = `Автор: ${props.post.authors[0]?.first_name} ${props.post.authors[0]?.last_name}`;
-} else if (props.post.authors.length > 1) {
+} else if ((props.blogItem.authors.length = 1)) {
+  authorText.value = `Автор: ${props.blogItem.authors[0]?.first_name} ${props.blogItem.authors[0]?.last_name}`;
+} else if (props.blogItem.authors.length > 1) {
   authorText.value = `Авторы: `;
-  props.post.authors.forEach((author) => {
+  props.blogItem.authors.forEach((author) => {
     authorText.value += `${author?.first_name} ${author?.last_name},`;
   });
   authorText.value = authorText.value.slice(0, -1);
@@ -20,21 +20,21 @@ if (props.post.authors.length < 1) {
 }
 
 // Дата
-const date = new Date(props.post.published_at * 1000).toLocaleDateString('ru-RU');
+const date = new Date(props.blogItem.published_at * 1000).toLocaleDateString('ru-RU');
 </script>
 
 <template>
   <div class="post-slide">
     <div class="post-slide__grid">
       <div class="post-slide__img-block">
-        <NuxtImg :src="props.post.image_preview" class="post-slide__img" />
+        <NuxtImg :src="props.blogItem.image_preview" class="post-slide__img" />
       </div>
       <div class="post-slide__about">
         <div class="post-slide__tags">
-          <p v-for="tag in props.post.tags" class="post-slide__tag">{{ tag.name }}</p>
+          <p v-for="tag in props.blogItem.tags" class="post-slide__tag">{{ tag.name }}</p>
         </div>
         <div class="post-slide__desc">
-          <p class="post-slide__title">{{ props.post.title }}</p>
+          <p class="post-slide__title">{{ props.blogItem.title }}</p>
           <p class="post-slide__authors">{{ authorText }}</p>
         </div>
         <div class="post-slide__meta">
@@ -56,20 +56,11 @@ const date = new Date(props.post.published_at * 1000).toLocaleDateString('ru-RU'
   width: 100%;
   align-items: center;
   justify-content: center;
-  height: 440px;
   border-radius: 24px;
-  padding: 20px;
   box-sizing: border-box;
-
-  @include mobile {
-    flex-direction: column;
-    padding: 10px;
-    height: 320px;
-  }
-
-  @include tablet {
-    flex-direction: column;
-  }
+  flex-direction: column;
+  padding: 20px;
+  border: 2px solid var(--dark-3);
 
   &__grid {
     width: 100%;
@@ -77,12 +68,8 @@ const date = new Date(props.post.published_at * 1000).toLocaleDateString('ru-RU'
     gap: 20px;
 
     display: grid;
-
-    grid-template-columns: 2fr 1fr;
-
-    @include mobile {
-      grid-template-columns: 1fr;
-    }
+    grid-template-columns: 1fr;
+    position: relative;
   }
 
   &__img-block {
@@ -106,14 +93,15 @@ const date = new Date(props.post.published_at * 1000).toLocaleDateString('ru-RU'
   }
 
   &__tags {
-    width: 100%;
+    width: auto;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    flex-direction: column;
 
-    @include mobile {
-      display: none;
-    }
+    position: absolute;
+    top: 10px;
+    left: 10px;
   }
 
   &__tag {
@@ -123,31 +111,33 @@ const date = new Date(props.post.published_at * 1000).toLocaleDateString('ru-RU'
     background-color: var(--white);
     border-radius: 1.5em;
     color: var(--dark);
+    width: min-content;
+    text-wrap-mode: nowrap;
+
+    @include mobile {
+      padding: 4px;
+      font-size: 14px;
+    }
   }
 
   &__desc {
-    height: 180px;
-
-    @include mobile {
-      height: auto;
-    }
+    height: auto;
   }
 
   &__title {
     font-size: 1.7em;
     font-weight: bold;
     margin: 0;
-    margin-top: 20px;
+    font-size: 24px;
 
     @include mobile {
       font-size: 18px;
-      margin-top: 0;
     }
   }
 
   &__authors {
     margin: 5px 0 0 0;
-
+    font-size: 16px;
     @include mobile {
       font-size: 12px;
     }
@@ -159,7 +149,7 @@ const date = new Date(props.post.published_at * 1000).toLocaleDateString('ru-RU'
     align-items: center;
     gap: 5px;
     font-weight: 500;
-
+    font-size: 14px;
     @include mobile {
       display: none;
     }

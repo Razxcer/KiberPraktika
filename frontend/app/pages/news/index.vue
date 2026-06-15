@@ -2,8 +2,8 @@
 
 <template>
   <div class="news-page">
-    <PostsSlider class="news-page__widget"/>
-    <NewsBlock class="news-page__widget"/>
+    <PostsSlider class="news-page__widget" />
+    <NewsBlock class="news-page__widget" />
   </div>
 </template>
 

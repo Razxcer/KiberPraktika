@@ -2,7 +2,8 @@
 
 <template>
   <div class="page">
-    <PostsSlider class="page__widget"/>
+    <PostsSlider class="page__widget" />
+    <BlogBlock class="page__widget" />
   </div>
 </template>
 <style lang="scss" scoped>

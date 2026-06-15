@@ -22,31 +22,30 @@ const reviews = computed(() => data.value?.data.items || []);
       <div v-else-if="error" class="reviews-slider__status">Не удалось загрузить отзывы</div>
 
       <div v-else class="reviews-slider__wrapper">
-
-      <ClientOnly>
-        <swiper-container
-          :modules="modules"
-          :slides-per-view="1"
-          :space-between="24"
-          :loop="false"
-          :navigation="{
-            prevEl: prevButtonRef,
-            nextEl: nextButtonRef,
-          }"
-          :pagination="{
-            el: '.reviews-slider__dots',
-            clickable: true,
-          }"
-          :breakpoints="{
-            768: { slidesPerView: 2 },
-            1200: { slidesPerView: 3 },
-          }"
-          class="reviews-slider__swiper"
-        >
-          <swiper-slide v-for="item in reviews" :key="item.id">
-            <ReviewCard :review="item" />
-          </swiper-slide>
-        </swiper-container>
+        <ClientOnly>
+          <swiper-container
+            :modules="modules"
+            :slides-per-view="1"
+            :space-between="24"
+            :loop="false"
+            :navigation="{
+              prevEl: prevButtonRef,
+              nextEl: nextButtonRef,
+            }"
+            :pagination="{
+              el: '.reviews-slider__dots',
+              clickable: true,
+            }"
+            :breakpoints="{
+              768: { slidesPerView: 2 },
+              1200: { slidesPerView: 3 },
+            }"
+            class="reviews-slider__swiper"
+          >
+            <swiper-slide v-for="item in reviews" :key="item.id">
+              <ReviewCard :review="item" />
+            </swiper-slide>
+          </swiper-container>
         </ClientOnly>
 
         <!-- БЛОК НАВИГАЦИИ (Стрелки + Точки снизу по центру) -->
@@ -56,7 +55,18 @@ const reviews = computed(() => data.value?.data.items || []);
             class="reviews-slider__arrow reviews-slider__arrow--prev"
             aria-label="Назад"
           >
-            ‹
+            <svg
+              width="11"
+              height="19"
+              viewBox="0 0 11 19"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8.65391 0.367968C9.14406 -0.122185 9.93875 -0.122185 10.4289 0.367968C10.9191 0.858122 10.9191 1.65281 10.4289 2.14297L3.09141 9.48047L10.4289 16.818C10.9191 17.3081 10.9191 18.1028 10.4289 18.593C9.93875 19.0831 9.14406 19.0831 8.65391 18.593L0.32572 10.2648C-0.107446 9.83162 -0.107445 9.12932 0.32572 8.69615L8.65391 0.367968Z"
+                fill="currentColor"
+              />
+            </svg>
           </button>
 
           <!-- Контейнер для точек пагинации Swiper -->
@@ -67,7 +77,18 @@ const reviews = computed(() => data.value?.data.items || []);
             class="reviews-slider__arrow reviews-slider__arrow--next"
             aria-label="Вперед"
           >
-            ›
+            <svg
+              width="11"
+              height="19"
+              viewBox="0 0 11 19"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M2.14297 18.593C1.65282 19.0831 0.858122 19.0831 0.367969 18.593C-0.122184 18.1028 -0.122184 17.3081 0.367969 16.818L7.70547 9.48047L0.36797 2.14297C-0.122183 1.65282 -0.122184 0.858121 0.367969 0.367969C0.858121 -0.122184 1.65282 -0.122184 2.14297 0.367969L10.4712 8.69616C10.9043 9.12932 10.9043 9.83162 10.4712 10.2648L2.14297 18.593Z"
+                fill="currentColor"
+              />
+            </svg>
           </button>
         </div>
       </div>
@@ -75,7 +96,7 @@ const reviews = computed(() => data.value?.data.items || []);
   </section>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .reviews-slider {
   width: 100%;
   padding: 80px 0;
@@ -152,7 +173,7 @@ const reviews = computed(() => data.value?.data.items || []);
     gap: 8px;
     width: auto !important;
 
-    .swiper-pagination-bullet {
+    :deep(.swiper-pagination-bullet) {
       width: 8px;
       height: 8px;
       background-color: var(--gray);
@@ -160,12 +181,12 @@ const reviews = computed(() => data.value?.data.items || []);
       margin: 0 !important;
       transition: all 0.3s ease;
       border-radius: 1.5em;
+    }
 
-      &-active {
-        background-color: var(--blue-button);
-        opacity: 1;
-        transform: scale(1.2);
-      }
+    :deep(.swiper-pagination-bullet-active) {
+      background-color: var(--blue-button);
+      opacity: 1;
+      transform: scale(1.2);
     }
   }
 }

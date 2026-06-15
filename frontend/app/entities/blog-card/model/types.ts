@@ -1,4 +1,4 @@
 import type { NewsItem } from '~/entities/news/model/types';
-export interface PostSlideProps {
-  post: NewsItem;
+export interface BlogCardProps {
+  blogItem: NewsItem;
 }

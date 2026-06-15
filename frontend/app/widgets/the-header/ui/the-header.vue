@@ -117,18 +117,10 @@ onUnmounted(() => {
       <nav class="the-header__nav">
         <ul class="the-header__menu">
           <li class="the-header__menu-item">
-            <NuxtLink
-              to="/projects"
-              class="the-header__link"
-              >Проекты</NuxtLink
-            >
+            <NuxtLink to="/projects" class="the-header__link">Проекты</NuxtLink>
           </li>
           <li class="the-header__menu-item">
-            <NuxtLink
-              to="/services"
-              class="the-header__link"
-              >Услуги</NuxtLink
-            >
+            <NuxtLink to="/services" class="the-header__link">Услуги</NuxtLink>
           </li>
           <li class="the-header__menu-item">
             <NuxtLink to="/about" class="the-header__link">О компании</NuxtLink>
@@ -136,7 +128,9 @@ onUnmounted(() => {
           <li class="the-header__menu-item">
             <NuxtLink to="/career" class="the-header__link">Карьера</NuxtLink>
           </li>
-          <li class="the-header__menu-item"><NuxtLink to="/blog" class="the-header__link">Блог</NuxtLink></li>
+          <li class="the-header__menu-item">
+            <NuxtLink to="/blog" class="the-header__link">Блог</NuxtLink>
+          </li>
           <li class="the-header__menu-item">
             <NuxtLink to="/news" class="the-header__link">Новости</NuxtLink>
           </li>
@@ -283,10 +277,20 @@ onUnmounted(() => {
                 >Карьера</NuxtLink
               >
             </li>
-            <li><NuxtLink to="/blog" class="the-header__mobile-link" @click="toggleMenu">Блог</NuxtLink></li>
-            <li><NuxtLink to="/career" class="the-header__mobile-link" @click="toggleMenu">Новости</NuxtLink></li>
             <li>
-              <NuxtLink to="/contacts" class="the-header__mobile-link" @click="toggleMenu">Контакты</NuxtLink>
+              <NuxtLink to="/blog" class="the-header__mobile-link" @click="toggleMenu"
+                >Блог</NuxtLink
+              >
+            </li>
+            <li>
+              <NuxtLink to="/news" class="the-header__mobile-link" @click="toggleMenu"
+                >Новости</NuxtLink
+              >
+            </li>
+            <li>
+              <NuxtLink to="/contacts" class="the-header__mobile-link" @click="toggleMenu"
+                >Контакты</NuxtLink
+              >
             </li>
           </ul>
         </nav>

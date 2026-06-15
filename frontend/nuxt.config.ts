@@ -62,10 +62,7 @@ export default defineNuxtConfig({
 
   vite: {
     optimizeDeps: {
-      include: [
-        'swiper/modules',
-        'swiper/vue'
-      ]
+      include: ['swiper/modules', 'swiper/vue'],
     },
     css: {
       preprocessorOptions: {
