@@ -64,6 +64,10 @@
     gap: 8px;
     width: auto !important;
     justify-content: center;
+
+    @include desktop{
+      display: none;
+    }
     
 
     :deep(.swiper-pagination-bullet) {
