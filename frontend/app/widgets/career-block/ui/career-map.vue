@@ -1,10 +1,14 @@
 <script setup lang="ts">
+import { shallowRef } from 'vue';
+import type { YMap } from '@yandex/ymaps3-types';
 import {
   YandexMap,
-  YandexMapDefaultFeaturesLayer,
   YandexMapDefaultSchemeLayer,
-  YandexMapMarker,
+  YandexMapDefaultFeaturesLayer,
+  YandexMapDefaultMarker,
 } from 'vue-yandex-maps';
+
+const map = shallowRef<null | YMap>(null);
 
 const mapCenter: [number, number] = [83.7573, 53.3551];
 const mapZoom = 16;
@@ -13,25 +17,23 @@ const mapZoom = 16;
 <template>
   <section class="map">
     <div class="map__container">
-      <YandexMap
-        :settings="{
-          location: {
-            center: mapCenter,
-            zoom: mapZoom,
-          },
-        }"
-        class="map__canvas"
-      >
-        <YandexMapDefaultSchemeLayer />
-        <YandexMapDefaultFeaturesLayer />
-
-        <YandexMapMarker :settings="{ coordinates: mapCenter }">
-          <div class="map__pin">
-            <span class="map__pin-text">КИБЕРИЯ</span>
-            <div class="map__pin-arrow"></div>
-          </div>
-        </YandexMapMarker>
-      </YandexMap>
+      <ClientOnly>
+        <yandex-map
+          v-model="map"
+          :settings="{
+            location: {
+              center: [37.617644, 55.755819],
+              zoom: 9,
+            },
+          }"
+          width="100%"
+          height="500px"
+        >
+          <yandex-map-default-scheme-layer />
+          <yandex-map-default-features-layer />
+          <yandex-map-default-marker :settings="{ coordinates: [37.617644, 55.755819] }" />
+        </yandex-map>
+      </ClientOnly>
     </div>
   </section>
 </template>

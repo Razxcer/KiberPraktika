@@ -277,6 +277,7 @@
       }
 
       &--mid-right-2 {
+        display: block;
         grid-column: 2;
         grid-row: 5;
         aspect-ratio: 3 / 4;

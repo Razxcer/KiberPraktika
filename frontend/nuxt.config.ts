@@ -20,7 +20,7 @@ export default defineNuxtConfig({
   modules: ['@nuxt/eslint', 'nuxt-swiper', 'vue-yandex-maps/nuxt', '@nuxt/image'],
 
   yandexMaps: {
-    apikey: 'd40d88ee-9f3a-4027-9631-7074e4fc08da',
+    apikey: 'da6c6537-7d20-485e-9cd3-12e4bf24e6ce',
   },
 
   css: ['~/assets/styles/main.scss'],
